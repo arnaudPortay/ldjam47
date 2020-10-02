@@ -1,9 +1,20 @@
 
 # Godot-specific ignores
 .import/
+*.translation
 export.cfg
 export_presets.cfg
 
 # Mono-specific ignores
 .mono/
 data_*/
+
+# Possible binaries
+*.exe
+*.lib
+*.dll
+*.so
+*.a
+*.o
+*.pdb
+*.exp
