@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Mountain/Assets/key_unpressed.png" type="Texture" id=3]
 [ext_resource path="res://Levels/Mountain/Assets/key_pressed.png" type="Texture" id=4]
 [ext_resource path="res://Generics/Key/Key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,7 +24,28 @@ format = 1
 tile_data = PoolIntArray( -655360, 3, 0, -655324, 2, 0, -393216, 3, 0, -393180, 2, 0, -131072, 3, 0, -131036, 2, 0, 131072, 3, 0, 131108, 2, 0, 393216, 3, 0, 393232, 0, 0, 393236, 6, 0, 393240, 8, 0, 393244, 1, 0, 393252, 2, 0, 655360, 3, 0, 655376, 2, 0, 655380, 9, 0, 655384, 9, 0, 655388, 3, 0, 655396, 2, 0, 852000, 0, 0, 852004, 4, 0, 917504, 3, 0, 917516, 0, 0, 917520, 4, 0, 1114144, 4, 0, 1114148, 9, 0, 1179648, 5, 0, 1179652, 6, 0, 1179656, 6, 0, 1179660, 4, 0, 1179664, 8, 0, 1179668, 6, 0, 1179672, 8, 0, 1179676, 6, 0, 1179680, 4, 0, 1376292, 9, 0 )
 
 [node name="LeftKey" parent="." instance=ExtResource( 5 )]
+position = Vector2( 858, 62 )
+binding_action_string = "move_left"
+key_unpressed_texture = ExtResource( 3 )
+key_pressed_texture = ExtResource( 4 )
 
 [node name="RightKey" parent="." instance=ExtResource( 5 )]
+position = Vector2( 684, 60 )
+binding_action_string = "move_right"
+key_unpressed_texture = ExtResource( 3 )
+key_pressed_texture = ExtResource( 4 )
 
 [node name="JumpKey" parent="." instance=ExtResource( 5 )]
+position = Vector2( 508, 70 )
+binding_action_string = "jump"
+key_unpressed_texture = ExtResource( 3 )
+key_pressed_texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 189.236, 33.7159 )
+
+[node name="LightKey" parent="." instance=ExtResource( 5 )]
+position = Vector2( 354, 64 )
+binding_action_string = "light"
+key_unpressed_texture = ExtResource( 3 )
+key_pressed_texture = ExtResource( 4 )
