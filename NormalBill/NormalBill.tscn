@@ -13,30 +13,29 @@
 [node name="Player" type="Node2D"]
 
 [node name="Bill" type="KinematicBody2D" parent="."]
-position = Vector2( 37.5, 35.3125 )
 script = ExtResource( 1 )
 gravity = 500.0
 
 [node name="icon" type="Sprite" parent="Bill"]
-position = Vector2( 2.01948e-28, -10.5312 )
+position = Vector2( 2.01948e-28, 0 )
 scale = Vector2( 0.341797, 0.328125 )
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bill"]
-position = Vector2( 0, -10.0938 )
+position = Vector2( 0, 2 )
 shape = SubResource( 1 )
-
-[node name="Ground" type="Node" parent="Bill"]
-script = ExtResource( 6 )
-
-[node name="Swim" type="Node" parent="Bill"]
-script = ExtResource( 2 )
-
-[node name="Fly" type="Node" parent="Bill"]
-script = ExtResource( 3 )
-
-[node name="Climb" type="Node" parent="Bill"]
-script = ExtResource( 5 )
 
 [node name="StateMachine" type="Node" parent="Bill"]
 script = ExtResource( 4 )
+
+[node name="Ground" type="Node" parent="Bill/StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Swim" type="Node" parent="Bill/StateMachine"]
+script = ExtResource( 2 )
+
+[node name="Fly" type="Node" parent="Bill/StateMachine"]
+script = ExtResource( 3 )
+
+[node name="Climb" type="Node" parent="Bill/StateMachine"]
+script = ExtResource( 5 )
