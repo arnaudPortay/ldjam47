@@ -3,10 +3,9 @@ extends Node2D
 export(String) var binding_action_string
 export(StreamTexture) var key_unpressed_texture : StreamTexture setget set_unpressed_texture
 export(StreamTexture) var key_pressed_texture : StreamTexture
+export var is_action_done : bool = false
 
 onready var sprite := $KeySprite
-
-var is_action_done : bool = false
 
 ################################################################################
 
