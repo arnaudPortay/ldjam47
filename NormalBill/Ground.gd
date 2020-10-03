@@ -1,5 +1,5 @@
 extends State
-
+export var friction_factor := 1.0
 func handleEvent(event:String) -> bool: 
 	match event:
 		machine.event_forward:
@@ -13,8 +13,13 @@ func handleEvent(event:String) -> bool:
 				machine.set_state("Swim")
 		machine.event_up:
 			if player.is_against_wall != player.AGAINST.e_nothing : 
+				player.do_jump(player.climb_factor)
 				machine.set_state("Climb")
 			
 		_ : return false
 	return true
 
+func update() -> bool:
+	#friction
+	player.velocity += -friction_factor*player.velocity
+	return true

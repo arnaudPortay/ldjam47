@@ -47,7 +47,7 @@ func animate_turn():
 func do_jump(factor):
 	set_direction (direction.x,factor)
 func set_direction(x,y)->void:
-	if direction.x != x && x!=0:
+	if direction.x != x and x!=0:
 		animate_turn()
 	direction.x = x
 	direction.y = y

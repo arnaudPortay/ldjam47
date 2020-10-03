@@ -15,7 +15,8 @@
 [node name="Bill" type="KinematicBody2D" parent="."]
 collision_mask = 2
 script = ExtResource( 1 )
-gravity = 500.0
+gravity = 2000.0
+jump_factor = -1.0
 
 [node name="icon" type="Sprite" parent="Bill"]
 position = Vector2( 2.01948e-28, 0 )

@@ -26,6 +26,9 @@ func handleEvent(event:String) -> bool:
 	return true
 
 func update() -> bool:
+	#friction
+	var friction_factor = 0.5
+	player.velocity += -friction_factor*player.velocity
 	if player.direction.y ==0.1: # low gravity on wall (slide)
 		player.direction.y =0.01
 	return true

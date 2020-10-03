@@ -29,12 +29,16 @@ func set_state(new_state) -> void:
 			break
 	
 func _physics_process(delta: float) -> void:
-	
+	if player.is_on_wall():
+		if player.is_against_wall == 0 :
+			if player.velocity.x>0:
+				player.is_against_wall = -1
+			else:
+				player.is_against_wall =1
+	elif state.get_name() != "Climb":
+		player.is_against_wall =0
 	if player.is_on_floor():
 		state.handleEvent(event_land)
-	#If we want to use the gravity, not used for the moment
-	player.velocity.y += player.gravity * delta
-	player.velocity.y = min (player.velocity.y, player.speed.y)
 	player.direction.y = 0.1 #gravity
 	var gauche_droite: = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if gauche_droite > 0 :
@@ -43,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_back)
 	else:
 		player.direction.x = 0.0
+	var haut_bas: = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	if haut_bas >0:
+		state.handleEvent(event_down)
+	elif haut_bas<0:
+		state.handleEvent(event_up)
 	var jump = Input.get_action_strength("jump") == 1 
 	var fly = Input.get_action_strength("fly") ==1
 	if jump :
@@ -54,6 +63,8 @@ func _physics_process(delta: float) -> void:
 	 # indépendant de l'état, allumer / eteindre la lumière
 	if Input.is_action_just_pressed("light"):
 		player.switchLight()
-	
-	player.velocity = player.speed * player.direction
+		
+	player.velocity += player.speed * player.direction
+	player.velocity.x = max(-1*player.speed.x,min (player.velocity.x, player.speed.x))
+	player.velocity.y = max(-1*player.speed.y,min (player.velocity.y, player.speed.y))
 	player.apply_velocity()

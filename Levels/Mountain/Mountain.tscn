@@ -18,6 +18,7 @@ closed_texture = ExtResource( 3 )
 opened_texture = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 50, 50 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
