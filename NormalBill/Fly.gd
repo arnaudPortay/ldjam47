@@ -3,30 +3,23 @@ extends State
 func handleEvent(event:String) -> bool: 
 	match event:
 		event_forward:
-			{
-				#if againstwall switch state to climb
+			if player.is_against_wall() ==player.AGAINST.e_wall_on_right : 
+				machine.set_state("Climb")
 				#add speed
-			}
 		event_back:
-			{
-				#if againstwall switch state to climb
-				#add negative speed
-			}
+			if player.is_against_wall() ==player.AGAINST.e_wall_on_left : 
+				machine.set_state("Climb")
+			#add speed
 		event_jump:
 			{
 				#double jump if able
 			}
 		event_land:
-			{
-				# transition to ground
-			}
+				machine.set_state("Ground")
 		event_dive:
-			{
-				#transition state swim
-			}
+				machine.set_state("Swim")
 		event_up:
-			{
-				#if againstwall switch state to climb
-			}
+			if player.is_against_wall() ==player.AGAINST.e_wall_on_right : 
+				machine.set_state("Climb")
 		_ : return false
 	return true
