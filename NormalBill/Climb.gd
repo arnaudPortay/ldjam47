@@ -2,36 +2,30 @@ extends State
 
 func handleEvent(event:String) -> bool: 
 	match event:
-		event_forward:
+		machine.event_forward:
 			{
-				#if againstwall == -1 switch state to fly
-				#add speed
+				#do nothing for now
 			}
-		event_back:
+		machine.event_back:
 			{
-				#if againstwall == +1 switch state to fly
-				#add negative speed
+				#do nothing for now
 			}
-		event_jump:
-			{
-				#add negative speed depending on againstwall sign
-				# switch state to fly
-			}
-		event_land:
-			{
-				# transition to ground
-			}
-		event_dive:
-			{
-				#transition state swim
-			}
-		event_up:
-			{
-				#climb up
-			}
-		event_down:
-			{
-				#climb down
-			}
+		machine.event_jump:
+			player.set_direction (player.is_against_wall(),player.direction.y)
+			player.do_jump(player.jump_factor)
+			machine.set_state("Fly") 
+		machine.event_land:
+			machine.set_state("Ground")
+		machine.event_dive:
+			machine.set_state("Swim")
+		machine.event_up:
+			player.do_jump(player.climb_factor)
+		machine.event_down:
+			player.do_jump(-1.0*player.climb_factor)
 		_ : return false
+	return true
+
+func update() -> bool:
+	if player.direction.y ==0.1: # low gravity on wall (slide)
+		player.direction.y =0.01
 	return true
