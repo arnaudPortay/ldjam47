@@ -11,7 +11,7 @@ func handleEvent(event:String) -> bool:
 				#do nothing for now
 			}
 		machine.event_jump:
-			player.set_direction (player.is_against_wall(),player.direction.y)
+			player.set_direction (player.is_against_wall,player.direction.y)
 			player.do_jump(player.jump_factor)
 			machine.set_state("Fly") 
 		machine.event_land:

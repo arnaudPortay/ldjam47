@@ -30,6 +30,8 @@ func set_state(new_state) -> void:
 	
 func _physics_process(delta: float) -> void:
 	
+	if player.is_on_floor():
+		state.handleEvent(event_land)
 	#If we want to use the gravity, not used for the moment
 	player.velocity.y += player.gravity * delta
 	player.velocity.y = min (player.velocity.y, player.speed.y)
@@ -41,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_back)
 	else:
 		player.direction.x = 0.0
-	var jump = Input.get_action_strength("jump") == 1 and player.is_on_floor()
+	var jump = Input.get_action_strength("jump") == 1 
 	var fly = Input.get_action_strength("fly") ==1
 	if jump :
 		state.handleEvent(event_jump)

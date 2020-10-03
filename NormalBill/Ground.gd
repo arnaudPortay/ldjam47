@@ -12,7 +12,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_dive:
 				machine.set_state("Swim")
 		machine.event_up:
-			if player.is_against_wall() != player.AGAINST.e_nothing : 
+			if player.is_against_wall != player.AGAINST.e_nothing : 
 				machine.set_state("Climb")
 			
 		_ : return false
