@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://StateMachine.gd"
 } ]
 _global_script_class_icons={
 "PlateformerPlayer": "",
-"State": ""
+"State": "",
+"StateMachine": ""
 }
 
 [application]
