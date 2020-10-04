@@ -26,10 +26,10 @@ func _ready() -> void:
 func set_state(new_state) -> void:
 	for child in get_children():
 		if child.get_name() == new_state:
-			print("state change from "+state_name)
+			#print("state change from "+state_name)
 			state = child
 			state_name = new_state
-			print("to "+state_name)
+			#print("to "+state_name)
 			break
 	
 func _physics_process(delta: float) -> void:
@@ -41,14 +41,14 @@ func _physics_process(delta: float) -> void:
 		var result = space_state.intersect_ray(player.global_position,target_right ,[player],player.collision_mask)
 		if result.size() != 0:
 			player.is_against_wall = player.AGAINST.e_wall_on_right
-			print("detected wall on right")
+			#print("detected wall on right")
 			## in case needed, display collision position
 #			var icon: Node2D = get_tree().get_root().find_node("pointer",true,false)
 #			icon.position = result.position
 		else:
 			var result_left = space_state.intersect_ray(player.global_position,target_left ,[player],player.collision_mask)
 			if result_left.size() != 0:
-				print("detected wall on left")
+				#print("detected wall on left")
 				player.is_against_wall = player.AGAINST.e_wall_on_left
 			else:
 				player.is_against_wall =0
@@ -64,20 +64,20 @@ func _physics_process(delta: float) -> void:
 	player.direction.y = 0.1 #gravity
 	
 	## inputs
-	var gauche_droite: = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	var gauche_droite: = Input.get_action_strength("go_right") - Input.get_action_strength("go_left")
 	if gauche_droite > 0 :
 		state.handleEvent(event_forward)
 	elif gauche_droite < 0 :
 		state.handleEvent(event_back)
 	else:
 		player.direction.x = 0.0
-	var haut_bas: = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	var haut_bas: = Input.get_action_strength("go_down") - Input.get_action_strength("go_up")
 	if haut_bas >0:
 		state.handleEvent(event_down)
 	elif haut_bas<0:
 		state.handleEvent(event_up)
 	var jump = Input.get_action_strength("jump") == 1 
-	var fly = Input.get_action_strength("fly") ==1
+	var fly = Input.get_action_strength("glide") ==1
 	if jump :
 		if detect_jump:
 			detect_jump = false

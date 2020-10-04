@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://NormalBill/NormalBill.gd" type="Script" id=1]
 [ext_resource path="res://NormalBill/Swim.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://NormalBill/Climb.gd" type="Script" id=5]
 [ext_resource path="res://NormalBill/Ground.gd" type="Script" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Mountain/Activated_skills.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -42,3 +43,5 @@ script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Activated_skills" parent="Camera2D" instance=ExtResource( 8 )]
