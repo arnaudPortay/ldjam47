@@ -32,6 +32,7 @@ func set_state(new_state) -> void:
 			#print("to "+state_name)
 			break
 	
+# warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
 	#wall detection
 	if player.is_against_wall!= 0 or player.is_on_wall():
@@ -70,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	elif gauche_droite < 0 :
 		state.handleEvent(event_back)
 	else:
-		player.direction.x = 0.0
+		player.set_direction(0.0, player.direction.y)
 	var haut_bas: = Input.get_action_strength("go_down") - Input.get_action_strength("go_up")
 	if haut_bas >0:
 		state.handleEvent(event_down)
