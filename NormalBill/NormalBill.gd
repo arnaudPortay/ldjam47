@@ -33,6 +33,8 @@ export var light_on: bool = false
 export var distance_detection :=11.0 ## should be equal to at least half the player width
 var velocity: = Vector2.ZERO
 
+onready var sprite : AnimatedSprite = $icon
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -53,12 +55,22 @@ func switchLight()->void:
 	emit_signal("did_use_light")
 	light_on = not light_on
 	#@TODO switch light
-func animate_turn():
-	pass
+	
+func animate_turn(flip):
+	sprite.flip_h = flip
+
+
 func do_jump(factor):
 	set_direction (direction.x,factor)
+
 func set_direction(x,y)->void:
-	if direction.x != x and x!=0:
-		animate_turn()
+	if direction.x != x and x != 0:
+		animate_turn(x<0)
+	
+	if x != 0:
+		sprite.play("Walk")
+	else:
+		sprite.play("Idle")
+
 	direction.x = x
 	direction.y = y
