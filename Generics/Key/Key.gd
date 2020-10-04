@@ -1,17 +1,21 @@
 extends Node2D
 
 export(String) var binding_action_string
-export(StreamTexture) var key_unpressed_texture : StreamTexture setget set_unpressed_texture
-export(StreamTexture) var key_pressed_texture : StreamTexture
+export(StreamTexture) var key_texture : StreamTexture
+export(Color) var modulate_when_deactivated = Color(0.5, 0.5, 0.5)
+export(Color) var modulate_when_activated = Color(1.0, 1.0, 1.0)
 export var is_action_done : bool = false
 
-onready var sprite := $KeySprite
+onready var sprite := $CenterContainer/KeySprite
+onready var label := $CenterContainer/KeyLabel
 
 ################################################################################
 
 func _ready():
 	if sprite:
-		sprite.set_texture(key_unpressed_texture)
+		sprite.set_texture(key_texture)
+		label.text = InputMap.get_action_list(binding_action_string)[0].as_text()
+		sprite.self_modulate = modulate_when_deactivated
 
 ################################################################################
 
@@ -19,13 +23,7 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_released(binding_action_string) and not is_action_done:
 		is_action_done = true
-		sprite.set_texture(key_pressed_texture)
+		sprite.self_modulate = modulate_when_activated
 
 ################################################################################
 
-func set_unpressed_texture(texture):
-	key_unpressed_texture = texture
-	if sprite:
-		sprite.set_texture(key_unpressed_texture)
-
-################################################################################
