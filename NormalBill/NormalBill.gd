@@ -2,6 +2,11 @@ extends KinematicBody2D
 
 class_name NormalBill
 
+signal did_jump
+signal did_move_right
+signal did_move_left
+signal did_use_light
+
 # Declare member variables here. Examples:
 export var can_move: bool = true
 export var can_swim: bool = false
@@ -10,6 +15,7 @@ export var can_glide: bool = false
 export var can_double_jump: bool = false
 export var is_on_surface: bool = false
 export var is_against_wall : int = 0
+
 
 var double_jump_activable = true
 enum AGAINST {
@@ -37,9 +43,14 @@ func _ready() -> void:
 #	pass
 
 func apply_velocity() -> void:
+	if velocity.x > 0:
+		emit_signal("did_move_right")
+	elif velocity.x < 0:
+		emit_signal("did_move_left")
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func switchLight()->void:
+	emit_signal("did_use_light")
 	light_on = not light_on
 	#@TODO switch light
 func animate_turn():
