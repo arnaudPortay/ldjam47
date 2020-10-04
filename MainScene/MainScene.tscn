@@ -84,4 +84,17 @@ margin_bottom = 469.011
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Levels" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExploreMountainNode" type="Control" parent="CanvasLayer/Levels"]
+margin_left = 526.027
+margin_top = 469.011
+margin_right = 526.027
+margin_bottom = 469.011
 [connection signal="try_entering_level" from="CanvasLayer/CursorBill" to="." method="_on_CursorBill_try_entering_level"]
