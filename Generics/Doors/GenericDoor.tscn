@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Generics/Doors/GenericDoor.gd" type="Script" id=1]
+[ext_resource path="res://Generics/Doors/porte ouverte.png" type="Texture" id=2]
+[ext_resource path="res://Generics/Doors/porte fermée.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 128, 128 )
+extents = Vector2( 72, 128 )
 
 [node name="Door" type="Node2D"]
 script = ExtResource( 1 )
+closed_texture = ExtResource( 3 )
+opened_texture = ExtResource( 2 )
 
 [node name="DoorArea2D" type="Area2D" parent="."]
 position = Vector2( 0, -128 )
@@ -14,6 +18,7 @@ monitorable = false
 collision_layer = 2
 
 [node name="DoorSprite" type="Sprite" parent="DoorArea2D"]
+texture = ExtResource( 3 )
 
 [node name="DoorCollisionShape" type="CollisionShape2D" parent="DoorArea2D"]
 shape = SubResource( 1 )

@@ -26,5 +26,7 @@ func handleEvent(event:String) -> bool:
 			if player.is_against_wall !=player.AGAINST.e_nothing : 
 				player.double_jump_activable = true
 				machine.set_state("Climb")
+		machine.event_jump_interrupted:
+			player.do_jump(2)
 		_ : return false
 	return true
