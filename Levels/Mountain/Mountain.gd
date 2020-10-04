@@ -3,10 +3,10 @@ extends Node2D
 
 # Declare member variables here. Examples:
 onready var door := $Door
-onready var left_key := $LeftKey
-onready var right_key := $RightKey
-onready var jump_key := $JumpKey
-onready var light_key := $LightKey
+onready var left_key := $Activated_skills/LeftKey
+onready var right_key := $Activated_skills/RightKey
+onready var jump_key := $Activated_skills/JumpKey
+onready var light_key := $Activated_skills/LightKey
 
 
 func _physics_process(delta):
