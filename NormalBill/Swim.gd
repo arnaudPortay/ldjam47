@@ -20,6 +20,9 @@ func handleEvent(event:String) -> bool:
 	return true
 
 func update() -> bool:
+	#friction
+	var friction_factor = 0.1
+	player.velocity += -friction_factor*player.velocity
 	if player.direction.y ==0.1: #no gravity under water
 		player.direction.y =0
 	return true
