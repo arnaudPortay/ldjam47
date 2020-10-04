@@ -8,7 +8,6 @@
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 2 )
-last_position = Vector2( 252, 856 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
@@ -44,6 +43,15 @@ positions = [ Vector2( 368, 532 ), Vector2( 368, 595 ), Vector2( 368, 659 ) ]
 [node name="Controls" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 1003.21, 564.258 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="LastPositionNode" type="Control" parent="CanvasLayer"]
+margin_left = 447.5
+margin_top = 896.404
+margin_right = 447.5
+margin_bottom = 896.404
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Animations" type="Control" parent="CanvasLayer"]
 __meta__ = {

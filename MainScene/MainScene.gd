@@ -1,7 +1,6 @@
 extends Node2D
 
 export(Array, String) var level_names = ["Mountain"]
-export(Vector2) var last_position
 var animated_state = 0
 var last_elapsed_animation = 0
 var last_elapsed_win = 0
@@ -12,6 +11,7 @@ var won_the_game = false
 
 onready var anim_node = $CanvasLayer/Animations
 onready var bill = $CanvasLayer/CursorBill
+onready var last_position_node = $CanvasLayer/LastPositionNode
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,7 +30,7 @@ func _process(delta):
 			
 	if not won_the_game and GameStats.last_succeded_level == len(level_names) - 1:
 		won_the_game = true
-		bill.position = last_position
+		bill.position = last_position_node.rect_position
 		last_elapsed_win = elapsed
 		
 	if won_the_game and elapsed - last_elapsed_win > MAX_DELAY_WIN:
