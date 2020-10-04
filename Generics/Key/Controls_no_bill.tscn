@@ -22,7 +22,6 @@ position = Vector2( 520, 400 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "go_up"
 is_action_done = true
-display_action = false
 
 [node name="Down" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -30,7 +29,6 @@ position = Vector2( 520, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "go_down"
 is_action_done = true
-display_action = false
 
 [node name="Light" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1305, 610 )
@@ -50,13 +48,12 @@ position = Vector2( 1095, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "glide"
 is_action_done = true
-display_action = false
 
 [node name="Explore" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1305, 400 )
 scale = Vector2( 0.8, 0.8 )
+binding_action_string = "explore"
 is_action_done = true
-display_action = false
 
 [node name="Left" parent="." instance=ExtResource( 2 )]
 position = Vector2( 310, 610 )

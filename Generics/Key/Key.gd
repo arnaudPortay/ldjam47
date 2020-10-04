@@ -32,6 +32,8 @@ func _ready():
 					action = array[1]
 				label_action.text = action + " :"
 			label_title.text = InputMap.get_action_list(binding_action_string)[0].as_text()
+		else:
+			label_action.text = ""
 		if is_action_done:
 			sprite.self_modulate = modulate_when_activated
 		else:
