@@ -70,7 +70,8 @@ func _physics_process(delta: float) -> void:
 	elif gauche_droite < 0 :
 		state.handleEvent(event_back)
 	else:
-		player.direction.x = 0.0
+		#player.direction.x = 0.0
+		player.set_direction(0.0, player.direction.y)
 	var haut_bas: = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	if haut_bas >0:
 		state.handleEvent(event_down)
