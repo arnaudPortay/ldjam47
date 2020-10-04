@@ -36,27 +36,7 @@ func set_state(new_state) -> void:
 # warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
 	#wall detection
-	if player.is_against_wall!= 0 or player.is_on_wall():
-		var space_state = player.get_world_2d().direct_space_state
-		var target_right:= player.global_position+Vector2(player.distance_detection,0)
-		var target_left:= player.global_position+Vector2(-1.0*player.distance_detection,0)
-		var result = space_state.intersect_ray(player.global_position,target_right ,[player],player.collision_mask)
-		if result.size() != 0:
-			player.is_against_wall = player.AGAINST.e_wall_on_right
-			#print("detected wall on right")
-			## in case needed, display collision position
-#			var icon: Node2D = get_tree().get_root().find_node("pointer",true,false)
-#			icon.position = result.position
-		else:
-			var result_left = space_state.intersect_ray(player.global_position,target_left ,[player],player.collision_mask)
-			if result_left.size() != 0:
-				#print("detected wall on left")
-				player.is_against_wall = player.AGAINST.e_wall_on_left
-			else:
-				player.is_against_wall =0
-	else:
-		player.is_against_wall =0
-		
+	detect_wall()
 	## floor detection
 	if player.is_on_floor():
 		state.handleEvent(event_land)
@@ -100,3 +80,25 @@ func _physics_process(delta: float) -> void:
 	player.velocity.x = max(-1*player.speed.x,min (player.velocity.x, player.speed.x))
 	player.velocity.y = max(-1*player.speed.y,min (player.velocity.y, player.speed.y))
 	player.apply_velocity()
+
+func detect_wall():
+	if player.is_against_wall!= 0 or player.is_on_wall():
+		var space_state = player.get_world_2d().direct_space_state
+		var target_right:= player.global_position+Vector2(player.distance_detection,0)
+		var target_left:= player.global_position+Vector2(-1.0*player.distance_detection,0)
+		var result = space_state.intersect_ray(player.global_position,target_right ,[player],player.collision_mask)
+		if result.size() != 0:
+			player.is_against_wall = player.AGAINST.e_wall_on_right
+			#print("detected wall on right")
+			## in case needed, display collision position
+#			var icon: Node2D = get_tree().get_root().find_node("pointer",true,false)
+#			icon.position = result.position
+		else:
+			var result_left = space_state.intersect_ray(player.global_position,target_left ,[player],player.collision_mask)
+			if result_left.size() != 0:
+				#print("detected wall on left")
+				player.is_against_wall = player.AGAINST.e_wall_on_left
+			else:
+				player.is_against_wall =0
+	else:
+		player.is_against_wall =0

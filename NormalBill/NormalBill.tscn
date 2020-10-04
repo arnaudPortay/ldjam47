@@ -71,3 +71,7 @@ script = ExtResource( 5 )
 current = true
 
 [node name="Activated_skills" parent="Camera2D" instance=ExtResource( 15 )]
+[connection signal="did_jump" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_jump"]
+[connection signal="did_move_left" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_move_left"]
+[connection signal="did_move_right" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_move_right"]
+[connection signal="did_use_light" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_use_light"]

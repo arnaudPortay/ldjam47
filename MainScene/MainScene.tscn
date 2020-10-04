@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MainScene/mainSceneBackground.PNG" type="Texture" id=1]
 [ext_resource path="res://MainScene/MainScene.gd" type="Script" id=2]
 [ext_resource path="res://CursorBill/CursorBill.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Generics/Key/Controls_no_bill.tscn" type="PackedScene" id=4]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 2 )
@@ -22,4 +23,8 @@ __meta__ = {
 [node name="CursorBill" parent="." instance=ExtResource( 3 )]
 position = Vector2( 252, 150 )
 positions = [ Vector2( 368, 532 ), Vector2( 368, 595 ), Vector2( 368, 659 ) ]
+
+[node name="Controls" parent="." instance=ExtResource( 4 )]
+position = Vector2( 775.138, 564.258 )
+scale = Vector2( 0.5, 0.5 )
 [connection signal="try_entering_level" from="CursorBill" to="." method="_on_CursorBill_try_entering_level"]

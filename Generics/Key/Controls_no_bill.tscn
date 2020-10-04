@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sources/Controls_sansBill.png" type="Texture" id=1]
+[ext_resource path="res://Generics/Key/Key.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Generics/Key/Control_Display.gd" type="Script" id=3]
+
+[node name="Controls" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Controls_sansBill" type="TextureRect" parent="."]
+margin_left = 1.68176
+margin_right = 1921.68
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 520, 400 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "go_up"
+is_action_done = true
+
+[node name="Down" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 520, 610 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "go_down"
+is_action_done = true
+
+[node name="Light" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1305, 610 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "light"
+is_action_done = true
+
+[node name="Jump" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1095, 400 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "jump"
+is_action_done = true
+
+[node name="Glide" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 1095, 610 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "glide"
+is_action_done = true
+
+[node name="Explore" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1305, 400 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "explore"
+is_action_done = true
+
+[node name="Left" parent="." instance=ExtResource( 2 )]
+position = Vector2( 310, 610 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "go_left"
+is_action_done = true
+
+[node name="Right" parent="." instance=ExtResource( 2 )]
+position = Vector2( 730, 610 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "go_right"
+is_action_done = true
