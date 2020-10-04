@@ -3,6 +3,7 @@ extends Control
 
 ################################################################################
 func _ready():
+	MusicController.playMusic(MusicController.m_main_music)
 	$VBoxContainer/StartButton.grab_focus()
 
 ################################################################################
