@@ -8,7 +8,7 @@ class_name State
 onready var player : NormalBill = get_parent().get_parent()
 onready var machine : StateMachine = get_parent()
 # Called when the node enters the scene tree for the first time.
-func handleEvent(event) -> bool:
+func handleEvent(_event) -> bool:
 	return false # Replace with function body.
 
 # basic update at each frame without any event 

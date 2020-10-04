@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Mountain/Assets/key_unpressed.png" type="Texture" id=3]
 [ext_resource path="res://Levels/Mountain/Assets/key_pressed.png" type="Texture" id=4]
-[ext_resource path="res://Generics/Key/Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
@@ -30,26 +29,6 @@ tile_data = PoolIntArray( -655360, 3, 0, -655324, 2, 0, -393216, 3, 0, -393180, 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 189.236, 33.7159 )
 
-[node name="Activated_skills" type="Node2D" parent="."]
-position = Vector2( -19.7881, 484.792 )
-scale = Vector2( 0.607326, 0.607326 )
-
-[node name="LeftKey" parent="Activated_skills" instance=ExtResource( 5 )]
-position = Vector2( 1100.07, 45.3849 )
-binding_action_string = "move_left"
-
-[node name="RightKey" parent="Activated_skills" instance=ExtResource( 5 )]
-position = Vector2( 833.685, 44.6711 )
-binding_action_string = "move_right"
-
-[node name="JumpKey" parent="Activated_skills" instance=ExtResource( 5 )]
-position = Vector2( 579.36, 46.8387 )
-binding_action_string = "jump"
-
-[node name="LightKey" parent="Activated_skills" instance=ExtResource( 5 )]
-position = Vector2( 327.385, 44.8956 )
-binding_action_string = "light"
-
 [node name="pointer" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
@@ -57,3 +36,7 @@ self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 501.908, 49.5068 )
 scale = Vector2( 0.170154, 0.170154 )
 texture = ExtResource( 8 )
+[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
+[connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
+[connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
+[connection signal="did_use_light" from="Player" to="." method="_on_Player_did_use_light"]
