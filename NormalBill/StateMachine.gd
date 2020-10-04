@@ -12,6 +12,7 @@ const event_glide = "glide"
 const event_dive = "dive"
 const event_land = "land"
 const event_fall = "fall"
+const event_jump_interrupted = "jump_interrupted"
 
 var detect_jump : bool = true
 onready var player :NormalBill= get_parent()
@@ -77,14 +78,15 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_down)
 	elif haut_bas<0:
 		state.handleEvent(event_up)
-	var jump = Input.get_action_strength("jump") == 1 
+	#var jump = Input.get_action_strength("jump") == 1 
 	var fly = Input.get_action_strength("glide") ==1
-	if jump :
-		if detect_jump:
-			detect_jump = false
-			state.handleEvent(event_jump)
-	else:
-		detect_jump = true
+
+	if Input.is_action_just_pressed("jump"):
+		state.handleEvent(event_jump)
+	
+	if Input.is_action_just_released("jump"):
+		state.handleEvent(event_jump_interrupted)
+	
 	if fly :
 		state.handleEvent(event_glide)
 	# indépendant de l'état, allumer / eteindre la lumière

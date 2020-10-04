@@ -35,20 +35,21 @@ extents = Vector2( 81.0607, 25.8489 )
 [node name="Bill" type="KinematicBody2D"]
 collision_mask = 2
 script = ExtResource( 1 )
+speed = Vector2( 300, 3000 )
 gravity = 2000.0
 jump_factor = -1.0
+distance_detection = 90.0
 
 [node name="icon" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -39.748 )
 scale = Vector2( 0.341797, 0.328125 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.348843, -26.3092 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="StateMachine" type="Node" parent="."]
