@@ -32,6 +32,7 @@ func set_state(new_state) -> void:
 			print("to "+state_name)
 			break
 	
+# warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
 	#wall detection
 	if player.is_against_wall!= 0 or player.is_on_wall():
