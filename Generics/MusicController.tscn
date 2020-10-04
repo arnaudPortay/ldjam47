@@ -13,3 +13,4 @@ __meta__ = {
 [node name="GlobalMusicPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="finished" from="GlobalMusicPlayer" to="." method="_on_GlobalMusicPlayer_finished"]
