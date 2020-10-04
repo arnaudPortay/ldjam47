@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Sources/Parallax_FondNuages.png" type="Texture" id=9]
+[ext_resource path="res://Sources/Parallax_Fond2.png" type="Texture" id=10]
+[ext_resource path="res://Sources/Parallax_Fond0.png" type="Texture" id=11]
+[ext_resource path="res://Sources/Parallax_Fond3.png" type="Texture" id=12]
+[ext_resource path="res://Sources/Parallax_Fond1.png" type="Texture" id=13]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
@@ -57,3 +62,42 @@ self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 501.908, 49.5068 )
 scale = Vector2( 0.170154, 0.170154 )
 texture = ExtResource( 8 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="Bg" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1789.07, -60.5903 )
+scale = Vector2( 1.47093, 1.46196 )
+texture = ExtResource( 11 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+
+[node name="Nuages" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1290.14, -101.757 )
+scale = Vector2( 1.11448, 1.11266 )
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.2 )
+
+[node name="Fond1" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 1091.72, 351.388 )
+texture = ExtResource( 13 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.4 )
+
+[node name="Fond2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 1046.12, 386.259 )
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.6 )
+
+[node name="Fond3" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 807.389, 402.353 )
+texture = ExtResource( 12 )
