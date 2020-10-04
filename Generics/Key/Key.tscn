@@ -4,11 +4,13 @@
 [ext_resource path="res://Generics/Key/Key.gd" type="Script" id=2]
 [ext_resource path="res://Sources/Fonts/Dirga.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 3 )
 
-[node name="Key" type="Node2D"]
+[node name="Key" type="Node2D" groups=[
+"Keys",
+]]
 self_modulate = Color( 0.772549, 0.12549, 0.12549, 1 )
 script = ExtResource( 2 )
 key_texture = ExtResource( 1 )
@@ -30,7 +32,7 @@ margin_top = 120.0
 margin_right = 245.0
 margin_bottom = 164.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "glide"
 align = 1
@@ -44,7 +46,7 @@ margin_top = 70.0
 margin_right = 245.0
 margin_bottom = 114.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "glide"
 align = 1
