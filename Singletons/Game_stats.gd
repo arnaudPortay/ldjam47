@@ -1,7 +1,11 @@
 extends Node
 
 var last_succeded_level = -1
-
+export var can_move: bool = true
+export var can_swim: bool = false
+export var can_climb: bool = false
+export var can_glide: bool = false
+export var can_double_jump: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

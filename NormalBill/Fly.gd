@@ -13,7 +13,7 @@ func handleEvent(event:String) -> bool:
 				player.double_jump_activable = true
 				machine.set_state("Climb")
 		machine.event_jump:
-			if player.can_double_jump and player.double_jump_activable:
+			if GameStats.can_double_jump and player.double_jump_activable:
 				player.double_jump_activable = false
 				player.do_jump(3*player.jump_factor)
 		machine.event_land:

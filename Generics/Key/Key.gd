@@ -30,6 +30,7 @@ func _ready():
 				var array = action.split("_")
 				if array.size() >1:
 					action = array[1]
+				action= action.capitalize();
 				label_action.text = action + " :"
 			label_title.text = InputMap.get_action_list(binding_action_string)[0].as_text()
 		else:

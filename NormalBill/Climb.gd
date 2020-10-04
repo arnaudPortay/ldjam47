@@ -9,7 +9,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_back:
 			pass
 		machine.event_jump:
-			if player.can_climb:
+			if GameStats.can_climb:
 				player.set_direction (player.is_against_wall,player.direction.y)
 				player.do_jump(player.jump_factor)
 				machine.set_state("Fly") 
@@ -18,7 +18,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_dive:
 			machine.set_state("Swim")
 		machine.event_up:
-			if player.can_climb:
+			if GameStats.can_climb:
 				if player.is_against_wall != player.AGAINST.e_nothing :
 					wallSide = player.is_against_wall
 					player.do_jump(player.climb_factor)

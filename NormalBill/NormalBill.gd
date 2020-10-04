@@ -8,11 +8,7 @@ signal did_move_left
 signal did_use_light
 
 # Declare member variables here. Examples:
-export var can_move: bool = true
-export var can_swim: bool = false
-export var can_climb: bool = false
-export var can_glide: bool = false
-export var can_double_jump: bool = false
+
 export var is_on_surface: bool = false
 export var is_against_wall : int = 0
 
@@ -27,7 +23,7 @@ export var direction: = Vector2.ZERO
 export var speed: = Vector2(300.0, 1000.0)
 export var gravity: = 3000.0
 export var swim_y_factor: = -0.02
-export var climb_factor: = -0.02
+export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
 export var distance_detection :=11.0 ## should be equal to at least half the player width

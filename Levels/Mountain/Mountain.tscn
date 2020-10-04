@@ -24,9 +24,6 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 189.236, 33.7159 )
-speed = Vector2( 300, 3000 )
-gravity = 2000.0
-jump_factor = -1.0
 
 [node name="pointer" type="Sprite" parent="."]
 visible = false

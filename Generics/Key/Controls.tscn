@@ -22,13 +22,6 @@ binding_action_string = "go_up"
 is_action_done = true
 display_action = false
 
-[node name="Down" parent="." instance=ExtResource( 2 )]
-position = Vector2( 877, 607 )
-scale = Vector2( 0.6, 0.6 )
-binding_action_string = "go_down"
-is_action_done = true
-display_action = false
-
 [node name="Light" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1428, 610 )
 scale = Vector2( 0.8, 0.8 )

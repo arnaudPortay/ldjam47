@@ -22,6 +22,7 @@ __meta__ = {
 
 [node name="CursorBill" parent="." instance=ExtResource( 3 )]
 position = Vector2( 252, 150 )
+playing = true
 positions = [ Vector2( 368, 532 ), Vector2( 368, 595 ), Vector2( 368, 659 ) ]
 
 [node name="Controls" parent="." instance=ExtResource( 4 )]

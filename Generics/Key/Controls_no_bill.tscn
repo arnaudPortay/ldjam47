@@ -17,33 +17,27 @@ __meta__ = {
 }
 
 [node name="Up" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 520, 400 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "go_up"
-is_action_done = true
-
-[node name="Down" parent="." instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 520, 610 )
-scale = Vector2( 0.8, 0.8 )
-binding_action_string = "go_down"
+modulate_when_activated = Color( 0.741176, 0.384314, 0.780392, 1 )
 is_action_done = true
 
 [node name="Light" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1305, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "light"
+modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
 is_action_done = true
 
 [node name="Jump" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1095, 400 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "jump"
+modulate_when_activated = Color( 0.254902, 0.737255, 0.168627, 1 )
 is_action_done = true
 
 [node name="Glide" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 1095, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "glide"
@@ -53,16 +47,19 @@ is_action_done = true
 position = Vector2( 1305, 400 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "explore"
+modulate_when_activated = Color( 0.388235, 0.388235, 0.388235, 1 )
 is_action_done = true
 
 [node name="Left" parent="." instance=ExtResource( 2 )]
 position = Vector2( 310, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "go_left"
+modulate_when_activated = Color( 0.101961, 0.776471, 0.713726, 1 )
 is_action_done = true
 
 [node name="Right" parent="." instance=ExtResource( 2 )]
 position = Vector2( 730, 610 )
 scale = Vector2( 0.8, 0.8 )
 binding_action_string = "go_right"
+modulate_when_activated = Color( 0.101961, 0.776471, 0.713726, 1 )
 is_action_done = true
