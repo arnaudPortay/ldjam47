@@ -15,7 +15,8 @@ func handleEvent(event:String) -> bool:
 			if player.is_against_wall != player.AGAINST.e_nothing : 
 				player.do_jump(player.climb_factor)
 				machine.set_state("Climb")
-			
+		machine.event_fall:
+			machine.set_state("Fly")
 		_ : return false
 	return true
 

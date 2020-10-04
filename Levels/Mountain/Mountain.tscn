@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Generics/Key/Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
@@ -46,9 +47,17 @@ key_pressed_texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 189.236, 33.7159 )
+distance_detection = 11.0
 
 [node name="LightKey" parent="." instance=ExtResource( 5 )]
 position = Vector2( 354, 64 )
 binding_action_string = "light"
 key_unpressed_texture = ExtResource( 3 )
 key_pressed_texture = ExtResource( 4 )
+
+[node name="pointer" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 501.908, 49.5068 )
+scale = Vector2( 0.170154, 0.170154 )
+texture = ExtResource( 8 )

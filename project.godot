@@ -10,7 +10,7 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Bill",
+"class": "NormalBill",
 "language": "GDScript",
 "path": "res://NormalBill/NormalBill.gd"
 }, {
@@ -25,7 +25,7 @@ _global_script_classes=[ {
 "path": "res://NormalBill/StateMachine.gd"
 } ]
 _global_script_class_icons={
-"Bill": "",
+"NormalBill": "",
 "State": "",
 "StateMachine": ""
 }
@@ -40,6 +40,8 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=500
+window/size/test_height=500
 
 [gdnative]
 

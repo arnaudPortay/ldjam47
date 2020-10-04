@@ -5,7 +5,7 @@ class_name State
 # var a: int = 2
 # var b: String = "text"
 
-onready var player : Bill = get_parent().get_parent()
+onready var player : NormalBill = get_parent().get_parent()
 onready var machine : StateMachine = get_parent()
 # Called when the node enters the scene tree for the first time.
 func handleEvent(event) -> bool:
@@ -15,3 +15,5 @@ func handleEvent(event) -> bool:
 func update() -> bool:
 	return true
 
+func init() -> bool:
+	return true

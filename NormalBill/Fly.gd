@@ -15,7 +15,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_jump:
 			if player.can_double_jump and player.double_jump_activable:
 				player.double_jump_activable = false
-				player.do_jump(player.jump_factor)
+				player.do_jump(3*player.jump_factor)
 		machine.event_land:
 			player.double_jump_activable = true
 			machine.set_state("Ground")
@@ -23,7 +23,7 @@ func handleEvent(event:String) -> bool:
 			player.double_jump_activable = true
 			machine.set_state("Swim")
 		machine.event_up:
-			if player.is_against_wall ==player.AGAINST.e_wall_on_right : 
+			if player.is_against_wall !=player.AGAINST.e_nothing : 
 				player.double_jump_activable = true
 				machine.set_state("Climb")
 		_ : return false
