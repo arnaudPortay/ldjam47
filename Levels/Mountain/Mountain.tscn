@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Mountain/mountain_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Mountain/Activated_skills.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
@@ -12,18 +13,28 @@ script = ExtResource( 7 )
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 1 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 50, 50 )
+cell_size = Vector2( 100, 100 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -655360, 3, 0, -655324, 2, 0, -393216, 3, 0, -393180, 2, 0, -131072, 3, 0, -131036, 2, 0, 131072, 3, 0, 131108, 2, 0, 393216, 3, 0, 393232, 0, 0, 393236, 6, 0, 393240, 8, 0, 393244, 1, 0, 393252, 2, 0, 655360, 3, 0, 655376, 2, 0, 655380, 9, 0, 655384, 9, 0, 655388, 3, 0, 655396, 2, 0, 852000, 0, 0, 852004, 4, 0, 917504, 3, 0, 917516, 0, 0, 917520, 4, 0, 1114144, 4, 0, 1114148, 9, 0, 1179648, 5, 0, 1179652, 6, 0, 1179656, 6, 0, 1179660, 4, 0, 1179664, 8, 0, 1179668, 6, 0, 1179672, 8, 0, 1179676, 6, 0, 1179680, 4, 0, 1376292, 9, 0 )
+tile_data = PoolIntArray( -262145, 0, 65536, -327661, 0, 65536, -196609, 0, 131072, -262125, 0, 131072, -131073, 0, 131072, -196589, 0, 131072, -65537, 0, 131072, -131053, 0, 131072, -1, 0, 131072, -65517, 0, 131072, 65535, 0, 131072, 19, 0, 131072, 131071, 0, 131072, 65555, 0, 131072, 196607, 0, 131072, 131091, 0, 131072, 262143, 0, 6, 196608, 0, 2, 196609, 0, 2, 196610, 0, 2, 196611, 0, 3, 196627, 0, 131072, 327679, 0, 131072, 262150, 0, 1, 262151, 0, 3, 262154, 0, 1, 262155, 0, 3, 262163, 0, 131072, 393215, 0, 131072, 327699, 0, 131072, 458751, 0, 131072, 393228, 0, 4, 393229, 0, 2, 393230, 0, 2, 393231, 0, 2, 393232, 0, 2, 393233, 0, 2, 393234, 0, 2, 393235, 0, 65541, 524287, 0, 131072, 458764, 0, 131072, 589823, 0, 131072, 524299, 0, 4, 524300, 0, 65541, 655359, 0, 65540, 589824, 0, 2, 589825, 0, 2, 589826, 0, 2, 589827, 0, 2, 589828, 0, 2, 589829, 0, 2, 589830, 0, 2, 589831, 0, 2, 589832, 0, 2, 589833, 0, 2, 589834, 0, 2, 589835, 0, 65541 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 618.6, 1002.84 )
+position = Vector2( 62.9339, 304.271 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 189.236, 33.7159 )
+position = Vector2( 140.206, 889.525 )
+jump_factor = -1.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = -1000000
+limit_right = 1920
+limit_bottom = 950
+limit_smoothed = true
+smoothing_enabled = true
 
 [node name="pointer" type="Sprite" parent="."]
 visible = false
@@ -32,7 +43,14 @@ self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 501.908, 49.5068 )
 scale = Vector2( 0.170154, 0.170154 )
 texture = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Activated_skills" parent="CanvasLayer" instance=ExtResource( 3 )]
+position = Vector2( 1717.44, 64.0345 )
+[connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
 [connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
+[connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
 [connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
+[connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
 [connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
-[connection signal="did_use_light" from="Player" to="." method="_on_Player_did_use_light"]

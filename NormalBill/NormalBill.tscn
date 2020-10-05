@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://NormalBill/NormalBill.gd" type="Script" id=1]
 [ext_resource path="res://NormalBill/Swim.gd" type="Script" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Sources/Bill/Bill_SD_00020.png" type="Texture" id=12]
 [ext_resource path="res://Sources/Bill/Bill_SD_00029.png" type="Texture" id=13]
 [ext_resource path="res://Sources/Bill/Bill_SD_00041.png" type="Texture" id=14]
-[ext_resource path="res://Levels/Mountain/Activated_skills.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -35,9 +34,9 @@ extents = Vector2( 81.0607, 25.8489 )
 [node name="Bill" type="KinematicBody2D"]
 collision_mask = 2
 script = ExtResource( 1 )
-speed = Vector2( 300, 3000 )
-gravity = 2000.0
-jump_factor = -1.0
+speed = Vector2( 700, 3000 )
+gravity = 500.0
+jump_factor = -10.0
 distance_detection = 90.0
 
 [node name="icon" type="AnimatedSprite" parent="."]
@@ -45,7 +44,7 @@ position = Vector2( 0, -39.748 )
 scale = Vector2( 0.341797, 0.328125 )
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -66,12 +65,3 @@ script = ExtResource( 3 )
 
 [node name="Climb" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
-[node name="Activated_skills" parent="Camera2D" instance=ExtResource( 15 )]
-[connection signal="did_jump" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_jump"]
-[connection signal="did_move_left" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_move_left"]
-[connection signal="did_move_right" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_move_right"]
-[connection signal="did_use_light" from="." to="Camera2D/Activated_skills" method="_on_Bill_did_use_light"]

@@ -8,21 +8,22 @@ scale = Vector2( 0.607326, 0.607326 )
 script = ExtResource( 2 )
 
 [node name="LeftKey" parent="." instance=ExtResource( 1 )]
-position = Vector2( 151, -317.346 )
+position = Vector2( 151, -65 )
 scale = Vector2( 0.5, 0.5 )
 binding_action_string = "go_right"
 
 [node name="RightKey" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10, -317.346 )
+position = Vector2( 10, -65 )
 scale = Vector2( 0.5, 0.5 )
 binding_action_string = "go_left"
 
 [node name="JumpKey" parent="." instance=ExtResource( 1 )]
-position = Vector2( -131, -318.038 )
+position = Vector2( -131, -65 )
 scale = Vector2( 0.5, 0.5 )
 binding_action_string = "jump"
 
 [node name="LightKey" parent="." instance=ExtResource( 1 )]
-position = Vector2( -272, -317.346 )
+visible = false
+position = Vector2( -272, -65 )
 scale = Vector2( 0.5, 0.5 )
 binding_action_string = "light"

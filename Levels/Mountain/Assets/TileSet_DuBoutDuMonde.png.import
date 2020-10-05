@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Auto-tile.png-40f4b7cf8e90ac25fdb6022078b5df8d.stex"
+path="res://.import/TileSet_DuBoutDuMonde.png-dec2a7c48e8e029f15d9568451cf09e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Mountain/Assets/Auto-tile.png"
-dest_files=[ "res://.import/Auto-tile.png-40f4b7cf8e90ac25fdb6022078b5df8d.stex" ]
+source_file="res://Levels/Mountain/Assets/TileSet_DuBoutDuMonde.png"
+dest_files=[ "res://.import/TileSet_DuBoutDuMonde.png-dec2a7c48e8e029f15d9568451cf09e7.stex" ]
 
 [params]
 
