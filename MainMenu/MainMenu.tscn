@@ -37,7 +37,7 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 307.0
+margin_right = 308.0
 margin_bottom = 77.0
 focus_neighbour_top = NodePath("../QuitButton")
 focus_neighbour_bottom = NodePath("../QuitButton")
@@ -48,7 +48,7 @@ text = "Start"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 margin_top = 97.0
-margin_right = 307.0
+margin_right = 308.0
 margin_bottom = 174.0
 focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../StartButton")
