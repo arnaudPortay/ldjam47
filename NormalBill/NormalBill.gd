@@ -60,8 +60,9 @@ func do_jump(x,y):
 	set_direction (x,y)
 	
 func do_fall(x,y):
-	sprite.play("Fall")
+	
 	bill.rotation_degrees = default_angle
+	sprite.play("Fall")
 	set_direction (x,y)
 	
 func do_climb(x,y):
@@ -69,10 +70,11 @@ func do_climb(x,y):
 	set_direction(x,y)
 	
 func do_move(x, y):
-	if x != 0:
-		sprite.play("Walk")
-	else:
-		sprite.play("Idle")
+	if is_on_floor():
+		if x != 0: 
+			sprite.play("Walk")
+		else:
+			sprite.play("Idle")
 	bill.rotation_degrees = default_angle
 	set_direction(x,y)
 
