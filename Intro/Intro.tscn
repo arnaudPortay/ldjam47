@@ -17,8 +17,9 @@ __meta__ = {
 }
 
 [node name="Key" parent="." instance=ExtResource( 3 )]
-position = Vector2( 912, 8 )
-scale = Vector2( 0.4, 0.4 )
-binding_action_string = "ui_accept"
+position = Vector2( 1726.19, 872.236 )
+scale = Vector2( 0.8, 0.8 )
+binding_action_string = "ui_skip"
+modulate_when_activated = Color( 0.658824, 0.658824, 0.658824, 1 )
 is_action_done = true
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
