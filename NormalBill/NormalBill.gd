@@ -27,14 +27,13 @@ export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
 export var distance_detection :=11.0 ## should be equal to at least half the player width
-export var underwater:=false;
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,10 +72,3 @@ func set_direction(x,y)->void:
 
 	direction.x = x
 	direction.y = y
-
-func _on_water_body_entered(body: Node) -> void:
-	underwater = true
-
-
-func _on_water_body_exited(body: Node) -> void:
-	underwater = false

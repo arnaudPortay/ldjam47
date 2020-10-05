@@ -7,19 +7,19 @@ func handleEvent(event:String) -> bool:
 		machine.event_back:
 			player.set_direction (-1.0,player.direction.y)
 		machine.event_jump:
-			if !player.underwater:
+			if !GameStats.underwater:
 				player.do_jump(player.jump_factor)
 				machine.set_state("Fly")
 			else:
 				player.do_jump(player.swim_y_factor)
 		machine.event_jump_long_press:
-			if !player.underwater:
+			if !GameStats.underwater:
 				player.do_jump(player.jump_factor)
 				machine.set_state("Fly")
 			else:
 				player.do_jump(player.swim_y_factor)
 		machine.event_up:
-			if player.underwater:
+			if GameStats.underwater:
 				player.do_jump(player.swim_y_factor)
 		machine.event_down:
 			player.do_jump(-1.0*player.swim_y_factor)
