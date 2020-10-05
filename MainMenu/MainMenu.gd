@@ -11,8 +11,8 @@ func _ready():
 
 func _on_StartButton_pressed():
 # warning-ignore:return_value_discarded
-	MusicController.loop_between(MusicController.t_start_beat)
-	get_tree().change_scene("res://MainScene/MainScene.tscn")
+	MusicController.stop()
+	get_tree().change_scene("res://Intro/Intro.tscn")
 
 ################################################################################
 
