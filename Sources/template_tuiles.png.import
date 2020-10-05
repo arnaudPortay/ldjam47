@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Controls_sansBill.png-057029ded0d8a36dc9f76ddb9bfa0beb.stex"
+path="res://.import/template_tuiles.png-18955f9784c9c84b9a2e2d7dbe0bfbd0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
-dest_files=[ "res://.import/Controls_sansBill.png-057029ded0d8a36dc9f76ddb9bfa0beb.stex" ]
+source_file="res://Sources/template_tuiles.png"
+dest_files=[ "res://.import/template_tuiles.png-18955f9784c9c84b9a2e2d7dbe0bfbd0.stex" ]
 
 [params]
 
