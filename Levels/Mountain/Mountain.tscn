@@ -89,9 +89,9 @@ motion_mirroring = Vector2( 2000, 0 )
 [node name="Mount" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 209.224, 751.999 )
 texture = ExtResource( 10 )
-[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
 [connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
-[connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
+[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
 [connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
-[connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
+[connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
 [connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
+[connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
