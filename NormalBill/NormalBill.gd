@@ -54,6 +54,8 @@ func switchLight()->void:
 	#@TODO switch light
 	
 func animate_turn(flip):
+	if sprite.flip_h != flip:
+		sprite.position.x = -sprite.position.x
 	sprite.flip_h = flip
 
 
