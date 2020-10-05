@@ -57,9 +57,9 @@ position = Vector2( 224, 192 )
 [node name="Camera2D" type="Camera2D" parent="Bill"]
 current = true
 limit_left = 0
-limit_top = -500
+limit_top = -800
 limit_right = 6848
-limit_bottom = 2144
+limit_bottom = 2230
 limit_smoothed = true
 smoothing_enabled = true
 [connection signal="body_entered" from="Eau" to="." method="_on_Eau_body_entered"]
