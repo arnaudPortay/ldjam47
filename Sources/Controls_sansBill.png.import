@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Controls_sansBill.png-057029ded0d8a36dc9f76ddb9bfa0beb.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://Sources/Controls_sansBill.png"
-dest_files=[ "res://.import/Controls_sansBill.png-057029ded0d8a36dc9f76ddb9bfa0beb.stex" ]
-
 [params]
 
 compress/mode=0

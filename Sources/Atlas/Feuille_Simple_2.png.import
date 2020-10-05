@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileSetMountain.png-bb687b75c7245cb896cdca940308dbd7.stex"
+path="res://.import/Feuille_Simple_2.png-83bf1709c46337a4bb5fc7950c378433.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Mountain/Assets/TileSetMountain.png"
-dest_files=[ "res://.import/TileSetMountain.png-bb687b75c7245cb896cdca940308dbd7.stex" ]
+source_file="res://Sources/Atlas/Feuille_Simple_2.png"
+dest_files=[ "res://.import/Feuille_Simple_2.png-83bf1709c46337a4bb5fc7950c378433.stex" ]
 
 [params]
 

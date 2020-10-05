@@ -27,6 +27,7 @@ func handleEvent(event:String) -> bool:
 				player.double_jump_activable = true
 				machine.set_state("Climb")
 		machine.event_jump_interrupted:
-			player.do_jump(2)
+			#player.do_jump(2)
+			player.set_direction(player.direction.x,0)
 		_ : return false
 	return true

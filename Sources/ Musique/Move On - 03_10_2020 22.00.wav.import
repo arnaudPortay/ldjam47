@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Move On - 03_10_2020 22.00.wav-b688244392ffe6d913f8d5f17bca04f1.sample"
+
+[deps]
+
+source_file="res://Sources/ Musique/Move On - 03_10_2020 22.00.wav"
+dest_files=[ "res://.import/Move On - 03_10_2020 22.00.wav-b688244392ffe6d913f8d5f17bca04f1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
