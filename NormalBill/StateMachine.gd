@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_fall)
 	
 	#water detection
-	if player.underwater:
+	if GameStats.underwater:
 		state.handleEvent(event_dive)
 	
 	player.direction.y = 0.1 #gravity
