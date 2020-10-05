@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Mountain/mountain_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Levels/Mountain/Activated_skills.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Mountain/Atlas.tres" type="TileSet" id=13]
 [ext_resource path="res://Sources/Parallax Grotte/Grotte_1.png" type="Texture" id=14]
+[ext_resource path="res://Generics/Key/Controls.tscn" type="PackedScene" id=15]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 1, 2 )
@@ -57,6 +58,7 @@ position = Vector2( 140.206, 889.525 )
 jump_factor = -1.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, -8 )
 current = true
 limit_left = 0
 limit_top = -1000000
@@ -80,6 +82,14 @@ texture = ExtResource( 8 )
 [node name="Activated_skills" parent="CanvasLayer" instance=ExtResource( 12 )]
 position = Vector2( 1666.53, 55.5492 )
 scale = Vector2( 0.8, 0.8 )
+
+[node name="Controls" parent="CanvasLayer" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 287.843, 175.16 )
+scale = Vector2( 0.699155, 0.699155 )
+showUp = true
+showLeft = true
+showRight = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 0, 200 )

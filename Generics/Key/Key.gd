@@ -25,6 +25,7 @@ func _ready():
 	if sprite:
 		sprite.set_texture(key_texture)
 		if binding_action_string !="":
+			label_action.text = ""
 			if display_action:
 				var action :String= binding_action_string
 				var array = action.split("_")
@@ -34,7 +35,7 @@ func _ready():
 				label_action.text = action + " :"
 			label_title.text = InputMap.get_action_list(binding_action_string)[0].as_text()
 		else:
-			label_action.text = ""
+			label_title.text = ""
 		if is_action_done:
 			sprite.self_modulate = modulate_when_activated
 		else:

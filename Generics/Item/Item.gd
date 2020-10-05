@@ -7,7 +7,10 @@ signal item_taken(item_type)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for i in GameStats._gathered_items:
+		if i.category == item_type:
+			self.hide()
+			self.set_physics_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

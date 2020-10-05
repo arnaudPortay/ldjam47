@@ -41,12 +41,12 @@ __meta__ = {
 
 [node name="CursorBill" parent="CanvasLayer" instance=ExtResource( 3 )]
 position = Vector2( 446, 232 )
-frame = 1
 playing = true
 
 [node name="Controls" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 1003.21, 564.258 )
 scale = Vector2( 0.5, 0.5 )
+showExplore = true
 
 [node name="LastPositionNode" type="Control" parent="CanvasLayer"]
 margin_left = 447.5
@@ -218,7 +218,6 @@ texture = ExtResource( 7 )
 script = ExtResource( 8 )
 modulate_when_deactivated = Color( 0.278431, 0.247059, 0.152941, 1 )
 modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
-is_action_done = true
 
 [node name="Dot0Glide2" type="Sprite" parent="CanvasLayer/VisualIndicators/Glide"]
 position = Vector2( 869, 270 )
