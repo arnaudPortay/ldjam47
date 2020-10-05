@@ -7,6 +7,9 @@ export var can_swim: bool = false
 export var can_climb: bool = false
 export var can_glide: bool = false
 export var can_double_jump: bool = false
+
+export var underwater:=false;
+
 var lActualLevel: String = "None"
 
 var levels = {
@@ -57,6 +60,12 @@ func gather_item(var item):
 func _ready():
 	pass # Replace with function body.
 
+
+func _water_entered(_body):
+	underwater = true
+	
+func _water_exited(_body):
+	underwater = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

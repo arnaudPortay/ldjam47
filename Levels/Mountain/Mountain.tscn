@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Levels/Mountain/mountain_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WhileDisplay/WhileDisplay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Generics/WaterBG.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WhileDisplay/WhileDisplay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sources/Clouds.png" type="Texture" id=5]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
@@ -102,8 +102,8 @@ motion_mirroring = Vector2( 2000, 0 )
 [node name="Mount" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 209.224, 751.999 )
 texture = ExtResource( 10 )
+
 [node name="WhileDisplay" parent="." instance=ExtResource( 4 )]
-[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
 
 [node name="WaterBG2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1955.38, 959.5 )
@@ -115,5 +115,3 @@ collision_layer = 2147483652
 [connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
 [connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
 [connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
-[connection signal="body_entered" from="WaterBG2" to="Player" method="_on_water_body_entered"]
-[connection signal="body_exited" from="WaterBG2" to="Player" method="_on_water_body_exited"]
