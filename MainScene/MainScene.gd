@@ -1,7 +1,7 @@
 extends Node2D
 
-export(Array, String) var level_names = ["Mountain"]
-export (Array, String) var level_conditions = ["NOT READY"]
+export(Array, String) var level_names = ["Mountain", "Desert", "ThePit"]
+export (Array, String) var level_conditions = ["NOT READY", "DRY", "TROU"]
 var animated_state = 0
 var last_elapsed_animation = 0
 var last_elapsed_win = 0
