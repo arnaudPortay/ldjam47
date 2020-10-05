@@ -16,9 +16,12 @@ const event_fall = "fall"
 const event_jump_interrupted = "jump_interrupted"
 
 var detect_jump : bool = true
+var start_position
+
 onready var player :NormalBill= get_parent()
 
 func _ready() -> void:
+	start_position = player.position
 	if player.is_on_floor():
 		set_state("Ground")
 	else:
@@ -109,3 +112,11 @@ func detect_wall():
 				player.is_against_wall =0
 	else:
 		player.is_against_wall =0
+
+func return_to_start():
+	player.position = start_position
+	if player.is_on_floor():
+		set_state("Ground")
+	else:
+		set_state("Fly")
+	
