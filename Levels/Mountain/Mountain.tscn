@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Mountain/mountain_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Mountain/Activated_skills.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WhileDisplay/WhileDisplay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
@@ -48,9 +49,11 @@ texture = ExtResource( 8 )
 
 [node name="Activated_skills" parent="CanvasLayer" instance=ExtResource( 3 )]
 position = Vector2( 1717.44, 64.0345 )
-[connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
+
+[node name="WhileDisplay" parent="." instance=ExtResource( 4 )]
 [connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
-[connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
+[connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
 [connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
-[connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
+[connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
 [connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
+[connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
