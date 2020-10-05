@@ -27,6 +27,7 @@ export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
 export var distance_detection :=11.0 ## should be equal to at least half the player width
+export var underwater:=false;
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
@@ -53,6 +54,8 @@ func switchLight()->void:
 	#@TODO switch light
 	
 func animate_turn(flip):
+	if sprite.flip_h != flip:
+		sprite.position.x = -sprite.position.x
 	sprite.flip_h = flip
 
 
@@ -70,3 +73,10 @@ func set_direction(x,y)->void:
 
 	direction.x = x
 	direction.y = y
+
+func _on_water_body_entered(body: Node) -> void:
+	underwater = true
+
+
+func _on_water_body_exited(body: Node) -> void:
+	underwater = false

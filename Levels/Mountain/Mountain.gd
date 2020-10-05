@@ -5,12 +5,10 @@ export var ok_left:= false
 export var ok_jump:= false
 export var ok_light:= false
 
-# Declare member variables here. Examples:
-onready var door := $Door
 
 func check_end():
-	if not door.is_condition_met and ok_right and ok_left and ok_jump: #and ok_light:
-		door.set_condition_met(true)
+	if ok_right and ok_left and ok_jump: #and ok_light:
+		get_tree().call_group("Doors", "condition_met", true)
 
 
 func _on_Player_did_jump() -> void:

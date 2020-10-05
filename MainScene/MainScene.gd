@@ -1,6 +1,7 @@
 extends Node2D
 
 export(Array, String) var level_names = ["Mountain"]
+export (Array, String) var level_conditions = ["NOT READY"]
 var animated_state = 0
 var last_elapsed_animation = 0
 var last_elapsed_win = 0
@@ -57,5 +58,6 @@ func check_level_accessibility(level_index):
 func _on_CursorBill_try_entering_level(level_index):
 	if check_level_accessibility(level_index):
 # warning-ignore:return_value_discarded
+		GameStats.lActualLevel = level_conditions[level_index]
 		get_tree().change_scene("res://Levels/" + level_names[level_index] + "/" + level_names[level_index] + ".tscn")
 		
