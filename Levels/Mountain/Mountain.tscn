@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Levels/Mountain/Mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://Generics/Doors/GenericDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NormalBill/NormalBill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Mountain/Mountain.gd" type="Script" id=7]
@@ -11,12 +10,10 @@ script = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 1 )
-tile_set = ExtResource( 1 )
 cell_size = Vector2( 50, 50 )
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -655360, 3, 0, -655324, 2, 0, -393216, 3, 0, -393180, 2, 0, -131072, 3, 0, -131036, 2, 0, 131072, 3, 0, 131108, 2, 0, 393216, 3, 0, 393232, 0, 0, 393236, 6, 0, 393240, 8, 0, 393244, 1, 0, 393252, 2, 0, 655360, 3, 0, 655376, 2, 0, 655380, 9, 0, 655384, 9, 0, 655388, 3, 0, 655396, 2, 0, 852000, 0, 0, 852004, 4, 0, 917504, 3, 0, 917516, 0, 0, 917520, 4, 0, 1114144, 4, 0, 1114148, 9, 0, 1179648, 5, 0, 1179652, 6, 0, 1179656, 6, 0, 1179660, 4, 0, 1179664, 8, 0, 1179668, 6, 0, 1179672, 8, 0, 1179676, 6, 0, 1179680, 4, 0, 1376292, 9, 0 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 618.6, 1002.84 )
