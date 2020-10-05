@@ -134,9 +134,9 @@ region_filter_clip = true
 position = Vector2( 1955.38, 959.5 )
 scale = Vector2( 1, 0.75 )
 collision_layer = 2147483652
-[connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
 [connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
-[connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
+[connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
 [connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
-[connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
+[connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
 [connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
+[connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]

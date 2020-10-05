@@ -4,12 +4,12 @@ func handleEvent(event:String) -> bool:
 	match event:
 		machine.event_forward:
 			player.set_direction(1.0,player.direction.y)
-			if player.is_against_wall ==player.AGAINST.e_wall_on_right : 
-				transition_to_state("Climb")
+#			if player.is_against_wall ==player.AGAINST.e_wall_on_right : 
+#				transition_to_state("Climb")
 		machine.event_back:
 			player.set_direction (-1.0,player.direction.y)
-			if player.is_against_wall ==player.AGAINST.e_wall_on_left : 
-				transition_to_state("Climb")
+#			if player.is_against_wall ==player.AGAINST.e_wall_on_left : 
+#				transition_to_state("Climb")
 		machine.event_jump:
 			if GameStats.can_double_jump and player.double_jump_activable:
 				player.double_jump_activable = false
