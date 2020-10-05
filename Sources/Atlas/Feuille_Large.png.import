@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Feuille_Large.png-68d4c98597d71409d900b0eba9dfcaa6.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
+source_file="res://Sources/Atlas/Feuille_Large.png"
+dest_files=[ "res://.import/Feuille_Large.png-68d4c98597d71409d900b0eba9dfcaa6.stex" ]
+
 [params]
 
 compress/mode=0

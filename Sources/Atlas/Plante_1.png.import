@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Plante_1.png-3b259b62c3ee2613e5436f2578ef6e95.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
+source_file="res://Sources/Atlas/Plante_1.png"
+dest_files=[ "res://.import/Plante_1.png-3b259b62c3ee2613e5436f2578ef6e95.stex" ]
+
 [params]
 
 compress/mode=0

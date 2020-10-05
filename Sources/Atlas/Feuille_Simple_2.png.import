@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Feuille_Simple_2.png-83bf1709c46337a4bb5fc7950c378433.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
+source_file="res://Sources/Atlas/Feuille_Simple_2.png"
+dest_files=[ "res://.import/Feuille_Simple_2.png-83bf1709c46337a4bb5fc7950c378433.stex" ]
+
 [params]
 
 compress/mode=0

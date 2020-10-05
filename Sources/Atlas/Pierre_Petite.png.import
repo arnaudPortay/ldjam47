@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Pierre_Petite.png-9864df14f1303c0313c482eed31b5011.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
+source_file="res://Sources/Atlas/Pierre_Petite.png"
+dest_files=[ "res://.import/Pierre_Petite.png-9864df14f1303c0313c482eed31b5011.stex" ]
+
 [params]
 
 compress/mode=0

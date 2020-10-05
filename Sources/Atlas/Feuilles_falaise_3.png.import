@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Feuilles_falaise_3.png-85d052664d75393e6b5a047523cb0d93.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Sources/Controls_sansBill.png"
+source_file="res://Sources/Atlas/Feuilles_falaise_3.png"
+dest_files=[ "res://.import/Feuilles_falaise_3.png-85d052664d75393e6b5a047523cb0d93.stex" ]
+
 [params]
 
 compress/mode=0
