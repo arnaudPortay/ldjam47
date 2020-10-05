@@ -14,7 +14,6 @@ const event_dive = "dive"
 const event_land = "land"
 const event_fall = "fall"
 const event_jump_interrupted = "jump_interrupted"
-
 var detect_jump : bool = true
 var start_position
 
@@ -79,6 +78,8 @@ func _physics_process(delta: float) -> void:
 	
 	if fly :
 		state.handleEvent(event_glide)
+	else : 
+		player.is_gliding = false
 	# indépendant de l'état, allumer / eteindre la lumière
 	if Input.is_action_just_pressed("light"):
 		player.switchLight()
