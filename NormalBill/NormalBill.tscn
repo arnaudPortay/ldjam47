@@ -36,6 +36,7 @@ collision_mask = 2
 script = ExtResource( 1 )
 speed = Vector2( 700, 3000 )
 gravity = 500.0
+climb_factor = -0.005
 jump_factor = -10.0
 
 [node name="icon" type="AnimatedSprite" parent="."]
