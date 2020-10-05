@@ -24,15 +24,15 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
@@ -51,14 +51,12 @@ gravity = 500.0
 jump_factor = -10.0
 
 [node name="icon" type="AnimatedSprite" parent="."]
-position = Vector2( -0.20066, -0.053215 )
+position = Vector2( -42, -7 )
 scale = Vector2( 0.341797, 0.328125 )
 frames = SubResource( 1 )
-animation = "Fall"
-offset = Vector2( -122.293, -121.88 )
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.348843, -26.3092 )
 shape = SubResource( 2 )
 
 [node name="StateMachine" type="Node" parent="."]

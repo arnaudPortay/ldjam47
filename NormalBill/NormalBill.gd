@@ -26,7 +26,7 @@ export var swim_y_factor: = -0.02
 export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
-export var distance_detection :=90.0 ## should be equal to at least half the player width
+export var distance_detection :=-1*90.0 ## should be equal to at least half the player width
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
@@ -54,19 +54,21 @@ func animate_turn(flip):
 
 
 func do_jump(x,y):
-	bill.rotation_degrees = default_angle
+	set_direction (x,y)
+
+func animate_jump():
 	sprite.play("Jump")
-		
-	set_direction (x,y)
-	
-func do_fall(x,y):
-	
-	bill.rotation_degrees = default_angle
+
+func animate_fall():
 	sprite.play("Fall")
-	set_direction (x,y)
+	
+func animate_swim():
+	sprite.play("Idle")
+	
+func animate_climb():
+	sprite.play("Idle")
 	
 func do_climb(x,y):
-	bill.rotation_degrees = -x*climbing_angle
 	set_direction(x,y)
 	
 func do_move(x, y):
@@ -75,7 +77,6 @@ func do_move(x, y):
 			sprite.play("Walk")
 		else:
 			sprite.play("Idle")
-	bill.rotation_degrees = default_angle
 	set_direction(x,y)
 
 func set_direction(x,y)->void:

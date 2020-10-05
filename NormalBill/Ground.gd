@@ -8,6 +8,7 @@ func handleEvent(event:String) -> bool:
 			player.do_move (-1.0,player.direction.y)
 		machine.event_jump:
 			player.emit_signal("did_jump")
+			player.animate_jump()
 			player.do_jump(player.direction.x, player.jump_factor)
 			machine.set_state("Fly")
 		machine.event_dive:
@@ -17,7 +18,6 @@ func handleEvent(event:String) -> bool:
 				player.do_climb(player.is_against_wall, player.climb_factor)
 				machine.set_state("Climb")
 		machine.event_fall:
-			player.do_fall(0, 0)
 			machine.set_state("Fly")
 		_ : return false
 	return true

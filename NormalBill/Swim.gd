@@ -18,6 +18,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_jump_long_press:
 			if GameStats.can_swim:
 				if !GameStats.underwater:
+					player.animate_jump()
 					player.do_jump(player.direction.x, player.jump_factor)
 					machine.set_state("Fly")
 				else:
@@ -34,6 +35,7 @@ func handleEvent(event:String) -> bool:
 	return true
 
 func update() -> bool:
+	player.animate_swim()
 	if player.velocity.y >0:
 		player.velocity.y=0
 	#friction

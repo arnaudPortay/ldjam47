@@ -13,6 +13,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_jump:
 			if GameStats.can_double_jump and player.double_jump_activable:
 				player.double_jump_activable = false
+				player.animate_jump()
 				player.do_jump(player.direction.x, 3*player.jump_factor)
 		machine.event_land:
 			transition_to_state("Ground")
@@ -25,6 +26,7 @@ func handleEvent(event:String) -> bool:
 			if GameStats.can_glide :
 				player.is_gliding =true
 		machine.event_jump_interrupted:
+			pass
 			#player.do_jump(2)
 			#player.do_move(player.direction.x,0)
 		_ : return false
@@ -38,7 +40,10 @@ func transition_to_state(target) -> bool:
 
 
 func update() -> bool:
-	if player.velocity.y >0 and player.is_gliding:
-		player.velocity.y=0
+	if player.velocity.y >0:
+		if player.is_gliding:
+			player.velocity.y=0
+		else:
+			player.animate_fall()
 
 	return true
