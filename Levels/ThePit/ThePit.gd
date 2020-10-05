@@ -2,7 +2,7 @@ extends Node2D
 
 
 var boots_taken = false
-
+var sound_played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,3 +22,6 @@ func _on_ConditionMetArea_body_entered(body):
 func _on_Boots_item_taken(item_type):
 	if item_type == GameStats.Item_Types.climbing_boots:
 		boots_taken = true
+		if not sound_played:
+			sound_played = true
+			MusicController.playSound("res://Sources/Sons/One More.wav")

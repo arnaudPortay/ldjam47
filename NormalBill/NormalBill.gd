@@ -32,10 +32,6 @@ export var distance_detection :=-1*90.0 ## should be equal to at least half the 
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
-onready var bill = self
-
-export var climbing_angle = 90
-export var default_angle = 0
 
 func apply_velocity() -> void:
 	if velocity.x > 0:

@@ -2,6 +2,7 @@ extends Sprite
 
 export(GameStats.Item_Types) var item_type = GameStats.Item_Types.empty
 export(int) var value = 0
+var sound_played = false
 
 signal item_taken(item_type)
 
@@ -21,6 +22,9 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	var data = GameStats.Item.new(item_type, value)
 	GameStats.gather_item(data)
+	if not sound_played:
+		sound_played = true
+		MusicController.playSound("res://Sources/Sons/PorteSFX.wav")
 	self.hide()
 	self.set_physics_process(false)
 	emit_signal("item_taken", item_type)
