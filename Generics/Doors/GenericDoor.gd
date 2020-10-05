@@ -1,8 +1,9 @@
 extends Node2D
 
 # Exported variables
-export(bool) var is_condition_met : bool = false setget set_condition_met
-export(int) var level_index : int
+export(bool) var is_condition_met : bool = false
+export(int) var level_index : int = 0
+export var doorIndex : int
 export(StreamTexture) var closed_texture : StreamTexture setget set_closed_texture
 export(StreamTexture) var opened_texture : StreamTexture setget set_opened_texture
 
@@ -39,13 +40,14 @@ func _on_Area2D_body_exited(body):
 
 ################################################################################
 
-func set_condition_met(value):
+func condition_met(value):
 	is_condition_met = value
 	
 	if is_condition_met:
 		# if player already in then change scene now
 		if is_player_in:
 			GameStats.last_succeded_level = level_index
+			GameStats.update_completion(level_index,doorIndex)
 			# warning-ignore:return_value_discarded
 			get_tree().change_scene("res://MainScene/MainScene.tscn")
 		 # player out then change texture if sprite
