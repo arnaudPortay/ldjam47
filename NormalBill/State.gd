@@ -16,7 +16,7 @@ func update() -> bool:
 	return true
 
 # basic state transition
-func transition_to_state(target) -> bool:
+func transition_to_state(_target) -> bool:
 	return true
 
 

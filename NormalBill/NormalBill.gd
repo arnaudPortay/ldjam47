@@ -26,11 +26,16 @@ export var swim_y_factor: = -0.02
 export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
-export var distance_detection :=90.0 ## should be equal to at least half the player width
+var rotated := false
+var saved_position_sprite:=0
+export var distance_detection :=-1*90.0 ## should be equal to at least half the player width
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
-onready var controls: Node2D = $Controls
+onready var bill = self
+
+export var climbing_angle = 90
+export var default_angle = 0
 
 func apply_velocity() -> void:
 	if velocity.x > 0:
@@ -50,17 +55,51 @@ func animate_turn(flip):
 	sprite.flip_h = flip
 
 
-func do_jump(factor):
-	set_direction (direction.x,factor)
+func do_jump(x,y):
+	set_direction (x,y)
+
+func animate_jump():
+	sprite.play("Jump")
+
+func animate_fall():
+	sprite.play("Fall")
+	
+func animate_swim():
+	sprite.play("Idle")
+	
+func animate_climb():
+	if  !rotated:
+		rotated =true
+		sprite.rotation_degrees = -1*is_against_wall*90
+		if(is_against_wall == AGAINST.e_wall_on_left):
+			sprite.flip_h
+		saved_position_sprite = sprite.position.x
+		sprite.position.x=-1*is_against_wall*sprite.position.y
+	if direction.y <0: 
+		sprite.play("Walk")
+	else:
+		sprite.play("Idle")
+		
+func animate_end_climb():
+	if  rotated:
+		rotated =false
+		sprite.rotation_degrees = 0
+		sprite.position.x=saved_position_sprite
+	sprite.play("Idle")
+	
+func do_climb(x,y):
+	set_direction(x,y)
+	
+func do_move(x, y):
+	if is_on_floor():
+		if x != 0: 
+			sprite.play("Walk")
+		else:
+			sprite.play("Idle")
+	set_direction(x,y)
 
 func set_direction(x,y)->void:
 	if direction.x != x and x != 0:
 		animate_turn(x<0)
-	
-	if x != 0:
-		sprite.play("Walk")
-	else:
-		sprite.play("Idle")
-
 	direction.x = x
 	direction.y = y

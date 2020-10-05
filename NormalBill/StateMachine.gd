@@ -30,10 +30,10 @@ func _ready() -> void:
 func set_state(new_state) -> void:
 	for child in get_children():
 		if child.get_name() == new_state:
-			#print("state change from "+state_name)
+			print("state change from "+state_name)
 			state = child
 			state_name = new_state
-			#print("to "+state_name)
+			print("to "+state_name)
 			break
 	
 # warning-ignore:unused_argument
@@ -51,7 +51,9 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_dive)
 	
 	player.direction.y = 0.1 #gravity
-	
+#	player.rotation_degrees = player.default_angle
+	## call base state update
+	state.update()
 	## inputs
 	var gauche_droite: = Input.get_action_strength("go_right") - Input.get_action_strength("go_left")
 	if gauche_droite > 0 :
@@ -59,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	elif gauche_droite < 0 :
 		state.handleEvent(event_back)
 	else:
-		player.set_direction(0.0, player.direction.y)
+		player.do_move(0.0, player.direction.y)
 	var haut_bas: = Input.get_action_strength("go_down") - Input.get_action_strength("go_up")
 	if haut_bas >0:
 		state.handleEvent(event_down)
@@ -83,8 +85,7 @@ func _physics_process(delta: float) -> void:
 	# indépendant de l'état, allumer / eteindre la lumière
 	if Input.is_action_just_pressed("light"):
 		player.switchLight()
-	## call base state update
-	state.update()
+
 
 	## apply and bound velocity
 	player.velocity += player.speed * player.direction
