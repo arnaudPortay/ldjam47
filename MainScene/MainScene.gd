@@ -21,6 +21,7 @@ func _ready():
 		bill.position = anim_node.get_child(0).rect_position
 		bill.do_handle_inputs = false
 	else:
+		bill.current_index = GameStats.last_succeded_level
 		bill.position = levels.get_child(GameStats.last_succeded_level).rect_position
 		bill.do_handle_inputs = true
 	
@@ -62,6 +63,7 @@ func _process(delta):
 					bill.do_handle_inputs = true
 
 	if GameStats.won_the_game :
+		bill.do_handle_inputs = false
 		bill.position = last_position_node.rect_position
 		if last_elapsed_win == 0:
 			last_elapsed_win = elapsed
