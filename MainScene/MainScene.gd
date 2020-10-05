@@ -39,13 +39,13 @@ func _ready():
 		
 	#init powers
 	if GameStats.can_swim:
-		for dot in $CanvasLayer/VisualIndicators/Swim:
+		for dot in $CanvasLayer/VisualIndicators/Swim.get_children():
 			dot.action_done(true)
 	if GameStats.can_climb:
-		for dot in $CanvasLayer/VisualIndicators/Climb:
+		for dot in $CanvasLayer/VisualIndicators/Climb.get_children():
 			dot.action_done(true)
 	if GameStats.can_glide:
-		for dot in $CanvasLayer/VisualIndicators/Glide:
+		for dot in $CanvasLayer/VisualIndicators/Glide.get_children():
 			dot.action_done(true)
 	
 
