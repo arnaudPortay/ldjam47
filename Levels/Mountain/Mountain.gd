@@ -8,6 +8,7 @@ export var ok_light:= false
 
 func check_end():
 	if ok_right and ok_left and ok_jump: #and ok_light:
+		GameStats.can_move = true
 		get_tree().call_group("Doors", "condition_met", true)
 
 
