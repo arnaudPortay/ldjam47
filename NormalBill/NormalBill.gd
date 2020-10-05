@@ -11,7 +11,7 @@ signal did_use_light
 
 export var is_on_surface: bool = false
 export var is_against_wall : int = 0
-
+export var is_gliding := false
 
 var double_jump_activable = true
 enum AGAINST {

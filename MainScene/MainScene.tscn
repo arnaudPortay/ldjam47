@@ -152,7 +152,7 @@ position = Vector2( 1225, 465 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0, 0.529412, 1, 0.705882 )
+modulate_when_deactivated = Color( 0.117647, 0.192157, 0.258824, 1 )
 modulate_when_activated = Color( 0, 0.529412, 1, 1 )
 
 [node name="Dot0Swim2" type="Sprite" parent="CanvasLayer/VisualIndicators/Swim"]
@@ -161,7 +161,7 @@ position = Vector2( 836.901, 270 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0, 0.529412, 1, 0.705882 )
+modulate_when_deactivated = Color( 0.117647, 0.192157, 0.258824, 1 )
 modulate_when_activated = Color( 0, 0.529412, 1, 1 )
 
 [node name="Dot1Swim" type="Sprite" parent="CanvasLayer/VisualIndicators/Swim"]
@@ -169,7 +169,7 @@ position = Vector2( 1490, 506 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0, 0.529412, 1, 0.705882 )
+modulate_when_deactivated = Color( 0.117647, 0.192157, 0.258824, 1 )
 modulate_when_activated = Color( 0, 0.529412, 1, 1 )
 
 [node name="Dot2Swim" type="Sprite" parent="CanvasLayer/VisualIndicators/Swim"]
@@ -178,17 +178,17 @@ position = Vector2( 1365.33, 574.273 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0, 0.529412, 1, 0.705882 )
+modulate_when_deactivated = Color( 0.117647, 0.192157, 0.258824, 1 )
 modulate_when_activated = Color( 0, 0.529412, 1, 1 )
 
 [node name="Climb" type="Node" parent="CanvasLayer/VisualIndicators"]
 
 [node name="Dot0Climb" type="Sprite" parent="CanvasLayer/VisualIndicators/Climb"]
-position = Vector2( 1265, 465 )
+position = Vector2( 1265.75, 465 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0.741176, 0.384314, 0.780392, 0.705882 )
+modulate_when_deactivated = Color( 0.239216, 0.160784, 0.25098, 1 )
 modulate_when_activated = Color( 0.741176, 0.384314, 0.780392, 1 )
 
 [node name="Dot1Climb" type="Sprite" parent="CanvasLayer/VisualIndicators/Climb"]
@@ -197,7 +197,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 extra_condition = false
-modulate_when_deactivated = Color( 0.741176, 0.384314, 0.780392, 0.705882 )
+modulate_when_deactivated = Color( 0.239216, 0.160784, 0.25098, 1 )
 modulate_when_activated = Color( 0.741176, 0.384314, 0.780392, 1 )
 
 [node name="Dot1Climb2" type="Sprite" parent="CanvasLayer/VisualIndicators/Climb"]
@@ -206,7 +206,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 extra_condition = false
-modulate_when_deactivated = Color( 0.741176, 0.384314, 0.780392, 0.705882 )
+modulate_when_deactivated = Color( 0.239216, 0.160784, 0.25098, 1 )
 modulate_when_activated = Color( 0.741176, 0.384314, 0.780392, 1 )
 
 [node name="Glide" type="Node" parent="CanvasLayer/VisualIndicators"]
@@ -216,14 +216,15 @@ position = Vector2( 1305, 465 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0.847059, 0.662745, 0.0352941, 0.705882 )
+modulate_when_deactivated = Color( 0.278431, 0.247059, 0.152941, 1 )
 modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
+is_action_done = true
 
 [node name="Dot0Glide2" type="Sprite" parent="CanvasLayer/VisualIndicators/Glide"]
 position = Vector2( 869, 270 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-modulate_when_deactivated = Color( 0.847059, 0.662745, 0.0352941, 0.705882 )
+modulate_when_deactivated = Color( 0.278431, 0.247059, 0.152941, 1 )
 modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
 [connection signal="try_entering_level" from="CanvasLayer/CursorBill" to="." method="_on_CursorBill_try_entering_level"]
