@@ -3,8 +3,8 @@ extends Node
 var last_succeded_level = -1
 export var c_epsilon = 0.001
 export var can_move: bool = false
-export var can_swim: bool = true
-export var can_climb: bool = true
+export var can_swim: bool = false
+export var can_climb: bool = false
 export var can_glide: bool = false
 export var can_light: bool = false
 export var can_double_jump: bool = false
