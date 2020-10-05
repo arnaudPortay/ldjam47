@@ -31,6 +31,7 @@ tile_data = PoolIntArray( -2359271, 1, 65537, -2359270, 1, 65538, -2359269, 1, 6
 "Doors",
 ] instance=ExtResource( 2 )]
 position = Vector2( 2917.24, -1997.85 )
+scale = Vector2( 0.5, 0.5 )
 level_index = 2
 
 [node name="WhileDisplay" parent="." instance=ExtResource( 5 )]
@@ -53,7 +54,7 @@ limit_smoothed = true
 motion_scale = Vector2( 0.2, 1 )
 
 [node name="Grotte_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2895.26, 293.763 )
+position = Vector2( 2896, 296 )
 scale = Vector2( 11.295, 13.3535 )
 z_index = -2
 texture = ExtResource( 7 )
