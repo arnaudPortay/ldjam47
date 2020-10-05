@@ -30,7 +30,6 @@ export var distance_detection :=90.0 ## should be equal to at least half the pla
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
-onready var controls: Node2D = $Controls
 
 func apply_velocity() -> void:
 	if velocity.x > 0:

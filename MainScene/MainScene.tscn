@@ -41,6 +41,7 @@ __meta__ = {
 
 [node name="CursorBill" parent="CanvasLayer" instance=ExtResource( 3 )]
 position = Vector2( 446, 232 )
+frame = 1
 playing = true
 
 [node name="Controls" parent="CanvasLayer" instance=ExtResource( 4 )]
