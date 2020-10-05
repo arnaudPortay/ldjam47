@@ -33,7 +33,7 @@ func handleEvent(event:String) -> bool:
 					player.animate_end_climb()
 					player.animate_jump()
 #					player.do_jump(-1.0*player.jump_factor, wallSide)
-					player.do_jump(-1.0*wallSide, player.jump_factor)
+					player.do_jump(wallSide, player.jump_factor)
 					machine.set_state("Fly")
 		_ : return false
 	return true
