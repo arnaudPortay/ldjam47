@@ -172,4 +172,5 @@ centered = false
 position = Vector2( 3076.18, -367.922 )
 texture = ExtResource( 14 )
 centered = false
+[connection signal="need_restart" from="WhileDisplay/Controls" to="Bill" method="_on_Controls_need_restart"]
 [connection signal="body_entered" from="Eau" to="." method="_on_Eau_body_entered"]

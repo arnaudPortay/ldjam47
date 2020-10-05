@@ -24,7 +24,7 @@ func handleEvent(event:String) -> bool:
 				transition_to_state("Climb")
 		machine.event_glide:
 			if GameStats.can_glide :
-				player.is_gliding =true
+				player.glide(true)
 		machine.event_jump_interrupted:
 			pass
 			#player.do_jump(2)
@@ -34,7 +34,7 @@ func handleEvent(event:String) -> bool:
 	
 func transition_to_state(target) -> bool:
 	player.double_jump_activable = true
-	player.is_gliding= false
+	player.glide(false)
 	machine.set_state(target)
 	return true
 

@@ -122,5 +122,6 @@ position = Vector2( 2130.4, -1778.01 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConditionMetArea"]
 position = Vector2( 586.205, -319.371 )
 shape = SubResource( 1 )
+[connection signal="need_restart" from="WhileDisplay/Controls" to="Bill" method="_on_Controls_need_restart"]
 [connection signal="item_taken" from="Boots" to="." method="_on_Boots_item_taken"]
 [connection signal="body_entered" from="ConditionMetArea" to="." method="_on_ConditionMetArea_body_entered"]

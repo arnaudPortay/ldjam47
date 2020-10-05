@@ -53,6 +53,10 @@ func animate_turn(flip):
 	if sprite.flip_h != flip:
 		sprite.position.x = -sprite.position.x
 	sprite.flip_h = flip
+	
+	if $glider.flip_h != flip:
+		$glider.position.x = -$glider.position.x
+	$glider.flip_h = flip
 
 
 func do_jump(x,y):
@@ -63,7 +67,10 @@ func animate_jump():
 
 func animate_fall():
 	sprite.play("Fall")
-	
+
+func animate_glide():
+	sprite.play("Idle")
+
 func animate_swim():
 	sprite.play("Idle")
 	
@@ -103,3 +110,13 @@ func set_direction(x,y)->void:
 		animate_turn(x<0)
 	direction.x = x
 	direction.y = y
+	
+func glide(new_gliding):
+	$glider.visible = new_gliding
+	is_gliding = new_gliding
+	if (new_gliding):
+		animate_glide()
+
+
+func _on_Controls_need_restart() -> void:
+	$StateMachine.return_to_start()

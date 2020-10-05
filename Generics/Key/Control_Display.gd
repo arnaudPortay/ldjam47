@@ -1,6 +1,8 @@
 extends Node2D
 class_name Control_Display
 
+signal need_restart
+
 
 export(bool) var showUp = false
 export(bool) var showLeft = false
@@ -20,3 +22,7 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_released("ui_cancel"):
 		visible = !visible
+
+
+func _on_Button_pressed() -> void:
+	emit_signal("need_restart")

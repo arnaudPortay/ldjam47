@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	if fly :
 		state.handleEvent(event_glide)
 	else : 
-		player.is_gliding = false
+		player.glide(false)
 	# indépendant de l'état, allumer / eteindre la lumière
 	if Input.is_action_just_pressed("light"):
 		player.switchLight()
