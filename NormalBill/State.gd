@@ -15,5 +15,10 @@ func handleEvent(_event) -> bool:
 func update() -> bool:
 	return true
 
+# basic state transition
+func transition_to_state(target) -> bool:
+	return true
+
+
 func init() -> bool:
 	return true
