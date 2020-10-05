@@ -3,6 +3,8 @@ extends Sprite
 export(GameStats.Item_Types) var item_type = GameStats.Item_Types.empty
 export(int) var value = 0
 
+signal item_taken(item_type)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +20,4 @@ func _on_Area2D_body_entered(body):
 	GameStats.gather_item(data)
 	self.hide()
 	self.set_physics_process(false)
+	emit_signal("item_taken", item_type)
