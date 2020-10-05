@@ -49,8 +49,7 @@ func _process(delta):
 		
 
 func check_level_accessibility(level_index):
-	return  level_index == 0 or GameStats.get_completion(level_index, 0)
-		
+	return  level_index == 0 or GameStats.get_completion(level_index-1, 0)
 
 func _on_CursorBill_try_entering_level(level_index):
 	if check_level_accessibility(level_index):
