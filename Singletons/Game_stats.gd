@@ -6,6 +6,7 @@ export var can_swim: bool = false
 export var can_climb: bool = false
 export var can_glide: bool = false
 export var can_double_jump: bool = false
+var lActualLevel: String = "None"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

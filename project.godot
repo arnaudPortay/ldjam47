@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://NormalBill/StateMachine.gd"
+}, {
+"base": "Node",
+"class": "WhileDisplay",
+"language": "GDScript",
+"path": "res://WhileDisplay/WhileDisplay.gd"
 } ]
 _global_script_class_icons={
 "Control_Display": "",
 "NormalBill": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"WhileDisplay": ""
 }
 
 [application]
