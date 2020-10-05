@@ -73,10 +73,13 @@ position = Vector2( 501.908, 49.5068 )
 scale = Vector2( 0.170154, 0.170154 )
 texture = ExtResource( 8 )
 
+[node name="WhileDisplay" parent="." instance=ExtResource( 4 )]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Activated_skills" parent="CanvasLayer" instance=ExtResource( 12 )]
-position = Vector2( 1717.44, 64.0345 )
+position = Vector2( 1666.53, 55.5492 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( 0, 200 )
@@ -127,15 +130,13 @@ region_enabled = true
 region_rect = Rect2( 0, 60, 800, 300 )
 region_filter_clip = true
 
-[node name="WhileDisplay" parent="." instance=ExtResource( 4 )]
-
 [node name="WaterBG2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1955.38, 959.5 )
 scale = Vector2( 1, 0.75 )
 collision_layer = 2147483652
-[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
 [connection signal="did_jump" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_jump"]
-[connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
+[connection signal="did_jump" from="Player" to="." method="_on_Player_did_jump"]
 [connection signal="did_move_left" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_left"]
-[connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
+[connection signal="did_move_left" from="Player" to="." method="_on_Player_did_move_left"]
 [connection signal="did_move_right" from="Player" to="CanvasLayer/Activated_skills" method="_on_Bill_did_move_right"]
+[connection signal="did_move_right" from="Player" to="." method="_on_Player_did_move_right"]
