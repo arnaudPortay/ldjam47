@@ -37,7 +37,6 @@ script = ExtResource( 1 )
 speed = Vector2( 700, 3000 )
 gravity = 500.0
 jump_factor = -10.0
-distance_detection = 90.0
 
 [node name="icon" type="AnimatedSprite" parent="."]
 position = Vector2( -42, -40.045 )
