@@ -8,6 +8,7 @@ const event_back = "backward"
 const event_down = "downward"
 const event_up = "upward"
 const event_jump = "jump"
+const event_jump_long_press = "jump_long"
 const event_glide = "glide"
 const event_dive = "dive"
 const event_land = "land"
@@ -42,7 +43,11 @@ func _physics_process(delta: float) -> void:
 		state.handleEvent(event_land)
 	else:
 		state.handleEvent(event_fall)
-		
+	
+	#water detection
+	if player.underwater:
+		state.handleEvent(event_dive)
+	
 	player.direction.y = 0.1 #gravity
 	
 	## inputs
@@ -63,6 +68,8 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump"):
 		state.handleEvent(event_jump)
+	elif Input.get_action_strength("jump") == 1:
+		state.handleEvent(event_jump_long_press)
 	
 	if Input.is_action_just_released("jump"):
 		state.handleEvent(event_jump_interrupted)
