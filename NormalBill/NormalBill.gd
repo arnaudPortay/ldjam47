@@ -26,7 +26,7 @@ export var swim_y_factor: = -0.02
 export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
-export var distance_detection :=11.0 ## should be equal to at least half the player width
+export var distance_detection :=90.0 ## should be equal to at least half the player width
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
