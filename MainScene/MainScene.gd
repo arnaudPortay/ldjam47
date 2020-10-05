@@ -26,6 +26,28 @@ func _ready():
 	
 	for level in levels.get_children():
 		bill.positions.append(level.rect_position)
+	
+	#init doors
+	var i :=0
+	for level in $CanvasLayer/Doors.get_children():
+		var j:=0
+		for door in level.get_children():
+			door.condition_met(GameStats.get_completion(i, j))
+			j= j +1
+		
+		i = i+1
+		
+	#init powers
+	if GameStats.can_swim:
+		for dot in $CanvasLayer/VisualIndicators/Swim.get_children():
+			dot.action_done(true)
+	if GameStats.can_climb:
+		for dot in $CanvasLayer/VisualIndicators/Climb.get_children():
+			dot.action_done(true)
+	if GameStats.can_glide:
+		for dot in $CanvasLayer/VisualIndicators/Glide.get_children():
+			dot.action_done(true)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
