@@ -4,10 +4,10 @@ var last_succeded_level = -1
 export var c_epsilon = 0.001
 export var can_move: bool = true
 export var can_swim: bool = false
-export var can_climb: bool = false
+export var can_climb: bool = true
 export var can_glide: bool = false
 export var can_double_jump: bool = false
-
+var won_the_game := false
 export var underwater:=false;
 
 var lActualLevel: String = "None"
@@ -25,7 +25,11 @@ var completion:= {
 
 func update_completion(levelIndex, doorIndex):
 	completion[levels[levelIndex]][doorIndex] = true
+	if levelIndex == 0 and doorIndex == 1:
+		won_the_game = true
 
+func get_completion(levelIndex, doorIndex)-> bool:
+	return completion[levels[levelIndex]][doorIndex]
 
 enum Item_Types {
 	empty,
@@ -39,9 +43,9 @@ class Item:
 	var category
 	var value
 	
-	func _init(category, value):
-		self.category = category
-		self.value = value
+	func _init(p_category, p_value):
+		self.category = p_category
+		self.value = p_value
 		
 var _gathered_items = []
 

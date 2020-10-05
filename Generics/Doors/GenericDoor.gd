@@ -27,10 +27,8 @@ func _ready():
 # warning-ignore:unused_argument
 func _on_Area2D_body_entered(body):
 	is_player_in = true
-	if is_condition_met:
-		GameStats.last_succeded_level = level_index
-# warning-ignore:return_value_discarded
-		get_tree().change_scene("res://MainScene/MainScene.tscn")
+	check_end()
+
 
 ################################################################################
 
@@ -44,19 +42,20 @@ func condition_met(value):
 	is_condition_met = value
 	
 	if is_condition_met:
-		# if player already in then change scene now
-		if is_player_in:
-			GameStats.last_succeded_level = level_index
-			GameStats.update_completion(level_index,doorIndex)
-			# warning-ignore:return_value_discarded
-			get_tree().change_scene("res://MainScene/MainScene.tscn")
+		check_end()
 		 # player out then change texture if sprite
 		if sprite:
 			sprite.set_texture(opened_texture)
 			
 	elif sprite:
 		sprite.set_texture(closed_texture)
-	
+
+func check_end():
+	if is_condition_met and is_player_in:
+		GameStats.last_succeded_level = level_index
+		GameStats.update_completion(level_index,doorIndex)
+# warning-ignore:return_value_discarded
+		get_tree().change_scene("res://MainScene/MainScene.tscn")
 ################################################################################
 
 func set_closed_texture(texture : StreamTexture):

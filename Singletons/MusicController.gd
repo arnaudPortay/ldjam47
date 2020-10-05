@@ -10,7 +10,7 @@ var s_unlock_door := ""
 var s_victory := ""
 var t_current_loop : Vector2 = Vector2(0.0,0.0)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var pos= _player.get_playback_position()
 	if t_current_loop.y != 0 and pos >= t_current_loop.y:
 		_player.seek(t_current_loop.x)
