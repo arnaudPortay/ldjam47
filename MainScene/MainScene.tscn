@@ -218,7 +218,6 @@ texture = ExtResource( 7 )
 script = ExtResource( 8 )
 modulate_when_deactivated = Color( 0.278431, 0.247059, 0.152941, 1 )
 modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
-is_action_done = true
 
 [node name="Dot0Glide2" type="Sprite" parent="CanvasLayer/VisualIndicators/Glide"]
 position = Vector2( 869, 270 )

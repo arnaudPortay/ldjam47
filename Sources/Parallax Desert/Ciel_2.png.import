@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mount1.png-22ec6639a7b5b7e4dad8ccf47e8ca6ec.stex"
+path="res://.import/Ciel_2.png-fc27c38a9109146600858001e2770c23.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sources/Mount1.png"
-dest_files=[ "res://.import/Mount1.png-22ec6639a7b5b7e4dad8ccf47e8ca6ec.stex" ]
+source_file="res://Sources/Parallax Desert/Ciel_2.png"
+dest_files=[ "res://.import/Ciel_2.png-fc27c38a9109146600858001e2770c23.stex" ]
 
 [params]
 
