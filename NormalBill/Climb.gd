@@ -10,8 +10,7 @@ func handleEvent(event:String) -> bool:
 			pass
 		machine.event_jump:
 			if GameStats.can_climb:
-				player.set_direction (player.is_against_wall,player.direction.y)
-				player.do_jump(player.jump_factor)
+				player.do_jump(player.is_against_wall, player.jump_factor)
 				machine.set_state("Fly") 
 		machine.event_land:
 			machine.set_state("Ground")
@@ -21,13 +20,12 @@ func handleEvent(event:String) -> bool:
 			if GameStats.can_climb:
 				if player.is_against_wall != player.AGAINST.e_nothing :
 					wallSide = player.is_against_wall
-					player.do_jump(player.climb_factor)
+					player.do_climb(player.direction.x, player.climb_factor)
 				else:
-					player.set_direction (-1.0*wallSide,player.direction.y)
-					player.do_jump(player.jump_factor)
+					player.do_jump(-1.0*wallSide, player.jump_factor)
 					machine.set_state("Fly")
 		machine.event_down:
-			player.do_jump(-1.0*player.climb_factor)
+			player.do_jump(player.direction.x, -1.0*player.climb_factor)
 		_ : return false
 	return true
 

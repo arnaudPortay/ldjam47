@@ -3,7 +3,7 @@ extends State
 func handleEvent(event:String) -> bool: 
 	match event:
 		machine.event_forward:
-			player.set_direction (1.0,player.direction.y)
+			player.set_direction(1.0,player.direction.y)
 			if player.is_against_wall ==player.AGAINST.e_wall_on_right : 
 				player.double_jump_activable = true
 				machine.set_state("Climb")
@@ -15,7 +15,7 @@ func handleEvent(event:String) -> bool:
 		machine.event_jump:
 			if GameStats.can_double_jump and player.double_jump_activable:
 				player.double_jump_activable = false
-				player.do_jump(3*player.jump_factor)
+				player.do_jump(player.direction.x, 3*player.jump_factor)
 		machine.event_land:
 			player.double_jump_activable = true
 			machine.set_state("Ground")
@@ -26,8 +26,15 @@ func handleEvent(event:String) -> bool:
 			if player.is_against_wall !=player.AGAINST.e_nothing : 
 				player.double_jump_activable = true
 				machine.set_state("Climb")
-		machine.event_jump_interrupted:
+		#machine.event_jump_interrupted:
 			#player.do_jump(2)
-			player.set_direction(player.direction.x,0)
+			#player.do_move(player.direction.x,0)
 		_ : return false
 	return true
+	
+func update() -> bool:
+	if player.velocity.y > 0:
+		player.do_fall(player.direction.x, player.direction.y)
+		
+		return true
+	return false

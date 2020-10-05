@@ -30,6 +30,10 @@ export var distance_detection :=90.0 ## should be equal to at least half the pla
 var velocity: = Vector2.ZERO
 
 onready var sprite : AnimatedSprite = $icon
+onready var bill = self
+
+export var climbing_angle = 90
+export var default_angle = 0
 
 func apply_velocity() -> void:
 	if velocity.x > 0:
@@ -49,17 +53,31 @@ func animate_turn(flip):
 	sprite.flip_h = flip
 
 
-func do_jump(factor):
-	set_direction (direction.x,factor)
-
-func set_direction(x,y)->void:
-	if direction.x != x and x != 0:
-		animate_turn(x<0)
+func do_jump(x,y):
+	bill.rotation_degrees = default_angle
+	sprite.play("Jump")
+		
+	set_direction (x,y)
 	
+func do_fall(x,y):
+	sprite.play("Fall")
+	bill.rotation_degrees = default_angle
+	set_direction (x,y)
+	
+func do_climb(x,y):
+	bill.rotation_degrees = -x*climbing_angle
+	set_direction(x,y)
+	
+func do_move(x, y):
 	if x != 0:
 		sprite.play("Walk")
 	else:
 		sprite.play("Idle")
+	bill.rotation_degrees = default_angle
+	set_direction(x,y)
 
+func set_direction(x,y)->void:
+	if direction.x != x and x != 0:
+		animate_turn(x<0)
 	direction.x = x
 	direction.y = y
