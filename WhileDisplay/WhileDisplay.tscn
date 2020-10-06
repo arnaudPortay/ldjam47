@@ -63,6 +63,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Door" parent="." instance=ExtResource( 4 )]
+[node name="DisplayDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 750, 100 )
 scale = Vector2( 0.35, 0.35 )
+is_collidable = false
+doorIndex = 6

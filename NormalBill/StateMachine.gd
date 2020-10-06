@@ -30,10 +30,10 @@ func _ready() -> void:
 func set_state(new_state) -> void:
 	for child in get_children():
 		if child.get_name() == new_state:
-			print("state change from "+state_name)
+			#print("state change from "+state_name)
 			state = child
 			state_name = new_state
-			print("to "+state_name)
+			#print("to "+state_name)
 			break
 	
 # warning-ignore:unused_argument

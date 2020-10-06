@@ -10,8 +10,7 @@ signal item_taken(item_type)
 func _ready():
 	for i in GameStats._gathered_items:
 		if i.category == item_type:
-			self.hide()
-			self.set_physics_process(false)
+			deactivateItem()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +24,10 @@ func _on_Area2D_body_entered(body):
 	if not sound_played:
 		sound_played = true
 		MusicController.playSound("res://Sources/Sons/PorteSFX.wav")
-	self.hide()
-	self.set_physics_process(false)
+	deactivateItem()
 	emit_signal("item_taken", item_type)
+
+func deactivateItem() :
+	self.hide()
+	$Area2D/CollisionShape2D.disabled = true
+	self.set_physics_process(false)

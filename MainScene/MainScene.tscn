@@ -47,7 +47,7 @@ playing = true
 [node name="Controls" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 1003.21, 564.258 )
 scale = Vector2( 0.5, 0.5 )
-showExplore = true
+showMainSceneControls = true
 
 [node name="LastPositionNode" type="Control" parent="CanvasLayer"]
 margin_left = 447.5

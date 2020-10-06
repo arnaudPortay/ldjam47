@@ -77,9 +77,7 @@ texture = ExtResource( 8 )
 visible = false
 position = Vector2( 287.843, 175.16 )
 scale = Vector2( 0.7, 0.7 )
-showUp = true
-showLeft = true
-showRight = true
+showBaseControls = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

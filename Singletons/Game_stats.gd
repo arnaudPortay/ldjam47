@@ -23,11 +23,17 @@ var completion:= {
 	"Desert":[false,false],
 	"Pit":[false]
 }
-
+func check_end() -> bool:
+	for doors in completion.values():
+		for door in doors:
+			if not door:
+				return false
+		
+	return true
+			
 func update_completion(levelIndex, doorIndex):
 	completion[levels[levelIndex]][doorIndex] = true
-	if levelIndex == 0 and doorIndex == 1:
-		won_the_game = true
+	won_the_game = check_end()
 
 func get_completion(levelIndex, doorIndex)-> bool:
 	return completion[levels[levelIndex]][doorIndex]

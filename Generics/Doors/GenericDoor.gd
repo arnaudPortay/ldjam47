@@ -3,6 +3,7 @@ extends Node2D
 # Exported variables
 export(bool) var is_condition_met : bool = false
 export(int) var level_index : int = 0
+export var is_collidable:= true
 export var doorIndex : int
 export(StreamTexture) var closed_texture : StreamTexture setget set_closed_texture
 export(StreamTexture) var opened_texture : StreamTexture setget set_opened_texture
@@ -17,6 +18,8 @@ var is_player_in : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not is_collidable:
+		$DoorArea2D/DoorCollisionShape.disabled = true
 	if is_condition_met:
 		sprite.set_texture(opened_texture)
 	else:
