@@ -24,10 +24,13 @@ func handleEvent(event:String) -> bool:
 				else:
 					player.do_jump(player.direction.x, player.swim_y_factor)
 		machine.event_up:
-			if GameStats.underwater and GameStats.can_swim:
-				player.do_jump(player.direction.x, player.swim_y_factor)
+			if GameStats.can_swim:
+				if GameStats.underwater:
+					player.do_jump(player.direction.x, player.swim_y_factor)
+				else:
+					player.velocity.y=0
 		machine.event_down:
-			player.do_jump(player.direction.x, -1.0*player.swim_y_factor)
+			player.do_jump(player.direction.x, -10.0*player.swim_y_factor)
 		machine.event_land:
 			if not GameStats.can_swim:
 				machine.return_to_start()

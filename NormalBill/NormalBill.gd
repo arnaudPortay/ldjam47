@@ -27,7 +27,7 @@ export var climb_factor: = -0.05
 export var jump_factor: = -0.1
 export var light_on: bool = false
 var rotated := false
-var saved_position_sprite:=0
+var saved_position_sprite:=Vector2.ZERO
 export var distance_detection :=-1*90.0 ## should be equal to at least half the player width
 var velocity: = Vector2.ZERO
 
@@ -76,8 +76,9 @@ func animate_climb():
 		sprite.rotation_degrees = -1*is_against_wall*90
 		if(is_against_wall == AGAINST.e_wall_on_left):
 			sprite.flip_h
-		saved_position_sprite = sprite.position.x
+		saved_position_sprite = sprite.position
 		sprite.position.x=-1*is_against_wall*sprite.position.y
+		sprite.position.y = -1*sprite.position.x
 	if direction.y <0: 
 		sprite.play("Walk")
 	else:
@@ -87,7 +88,7 @@ func animate_end_climb():
 	if  rotated:
 		rotated =false
 		sprite.rotation_degrees = 0
-		sprite.position.x=saved_position_sprite
+		sprite.position=saved_position_sprite
 	sprite.play("Idle")
 	
 func do_climb(x,y):

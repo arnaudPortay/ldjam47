@@ -21,7 +21,7 @@ func _input(event):
 func refresh():
 		$Up.visible = GameStats.can_climb
 		$Down.visible = showMainSceneControls
-		$Light.visible = GameStats.can_light
+		$Light.visible = true
 		$Jump.visible = showBaseControls or GameStats.can_move
 		$Glide.visible = GameStats.can_glide
 		$Explore.visible = showMainSceneControls

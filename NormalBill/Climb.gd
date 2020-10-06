@@ -39,13 +39,14 @@ func handleEvent(event:String) -> bool:
 	return true
 
 func update() -> bool:
-#	player.rotation_degrees = -1*wallSide*player.climbing_angle
-	if player.velocity.y >0:
-		player.velocity.y = 0
-	#friction
-#	var friction_factor = 0.5
-#	player.velocity += -friction_factor*player.velocity
-	if player.direction.y ==0.1: # low gravity on wall (slide)
-		player.animate_climb()
-		player.direction.y =0.01
+	if GameStats.can_climb:
+	#	player.rotation_degrees = -1*wallSide*player.climbing_angle
+		if player.velocity.y >0:
+			player.velocity.y = 0
+		#friction
+	#	var friction_factor = 0.5
+	#	player.velocity += -friction_factor*player.velocity
+		if player.direction.y ==0.1: # low gravity on wall (slide)
+			player.animate_climb()
+			player.direction.y =0.01
 	return true

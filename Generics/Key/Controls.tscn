@@ -53,9 +53,10 @@ modulate_when_activated = Color( 0.388235, 0.388235, 0.388235, 1 )
 is_action_done = true
 
 [node name="Light" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1428, 610 )
-scale = Vector2( 0.8, 0.8 )
-binding_action_string = "light"
+position = Vector2( 426, 628 )
+scale = Vector2( 0.5, 0.5 )
+binding_action_string = "help"
+modulate_when_activated = Color( 0.847059, 0.415686, 0.0352941, 1 )
 is_action_done = true
 
 [node name="Jump" parent="." instance=ExtResource( 2 )]
