@@ -15,7 +15,7 @@ func _ready() -> void:
 	refresh()
 		
 func _input(event):
-	if event.is_action_released("ui_cancel") and can_be_canceled:
+	if (event.is_action_released("ui_cancel") or event.is_action_released("help")) and can_be_canceled:
 		visible = !visible
 
 func refresh():
