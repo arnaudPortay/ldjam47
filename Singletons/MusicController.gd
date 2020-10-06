@@ -9,6 +9,7 @@ var t_start_beat := 34.0
 var s_unlock_door := ""
 var s_victory := ""
 var t_current_loop : Vector2 = Vector2(0.0,0.0)
+var manually_stopped := false
 
 func _physics_process(_delta: float) -> void:
 	var pos= _player.get_playback_position()
@@ -18,12 +19,14 @@ func _physics_process(_delta: float) -> void:
 # Calling this function will load the given track, and play it
 func playMusic(track_url : String, from : float =0.0):
 	stop()
+	manually_stopped = false
 	var track = load(track_url)
 	_player.stream = track
 	_player.play(from)
 
 # Calling this function will stop the music
 func stop():
+	manually_stopped = true
 	_player.stop()
 
 func playSound(track_url : String):
@@ -40,4 +43,5 @@ func loop_between(x,y=0.0):
 
 
 func _on_GlobalMusicPlayer_finished() -> void:
-	_player.play(t_current_loop.x)
+	if not manually_stopped:
+		_player.play(t_current_loop.x)
