@@ -230,7 +230,6 @@ modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
 
 [node name="CursorBill" parent="CanvasLayer/mainSceneBackground/Node" instance=ExtResource( 3 )]
 position = Vector2( 446, 232 )
-frame = 1
 playing = true
 
 [node name="Controls_no_bill" parent="CanvasLayer" instance=ExtResource( 4 )]

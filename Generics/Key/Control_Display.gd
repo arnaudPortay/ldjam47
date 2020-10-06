@@ -7,7 +7,7 @@ export(bool) var showBaseControls = false
 export(bool) var showMainSceneControls = false
 export var can_be_canceled := true
 export var show_restart := true
-onready var restartButton :Node = $Buttons/Restart
+onready var restartButton :Node = get_node("Buttons/Restart")
 
 func _ready() -> void:
 	if restartButton:
