@@ -5,12 +5,17 @@ signal need_restart
 
 export(bool) var showBaseControls = false
 export(bool) var showMainSceneControls = false
+export var can_be_canceled := true
+export var show_restart := true
+onready var restartButton :Node = $Buttons/Restart
 
 func _ready() -> void:
-	 refresh()
+	if restartButton:
+		restartButton.visible = show_restart
+	refresh()
 		
 func _input(event):
-	if event.is_action_released("ui_cancel"):
+	if event.is_action_released("ui_cancel") and can_be_canceled:
 		visible = !visible
 
 func refresh():
@@ -29,3 +34,7 @@ func _on_Button_pressed() -> void:
 
 func _on_Item_taken(item_type) -> void:
 	refresh()
+
+
+func _on_Exit_pressed() -> void:
+	get_tree().quit()

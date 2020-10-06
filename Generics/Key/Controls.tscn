@@ -8,7 +8,7 @@
 [node name="Controls" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Controls" type="TextureRect" parent="."]
+[node name="Buttons" type="TextureRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 1 )
@@ -16,13 +16,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Controls"]
+[node name="Restart" type="Button" parent="Buttons"]
 margin_left = 302.0
 margin_top = 794.0
 margin_right = 699.0
 margin_bottom = 909.0
 theme = ExtResource( 4 )
 text = "Restart Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Buttons"]
+margin_left = 750.0
+margin_top = 794.0
+margin_right = 1147.0
+margin_bottom = 909.0
+theme = ExtResource( 4 )
+text = "Exit Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,4 +93,5 @@ scale = Vector2( 0.6, 0.6 )
 binding_action_string = "go_right"
 modulate_when_activated = Color( 0.101961, 0.776471, 0.713726, 1 )
 is_action_done = true
-[connection signal="pressed" from="Controls/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/Restart" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_Exit_pressed"]
