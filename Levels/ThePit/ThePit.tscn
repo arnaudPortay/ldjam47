@@ -15,7 +15,7 @@
 [ext_resource path="res://Generics/Key/Controls.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 89.533, 1017.45 )
+extents = Vector2( 585.704, 110.642 )
 
 [node name="ThePit" type="Node2D"]
 script = ExtResource( 12 )
@@ -40,6 +40,7 @@ visible = false
 position = Vector2( 233.797, 163.245 )
 scale = Vector2( 0.7, 0.7 )
 showBaseControls = true
+current_level = 2
 
 [node name="Bill" parent="." instance=ExtResource( 6 )]
 position = Vector2( 571.753, 1379.94 )
@@ -113,10 +114,11 @@ texture = ExtResource( 4 )
 item_type = 1
 
 [node name="ConditionMetArea" type="Area2D" parent="."]
-position = Vector2( 2130.4, -1778.01 )
+position = Vector2( -42.687, -1589.44 )
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConditionMetArea"]
-position = Vector2( 586.205, -319.371 )
+position = Vector2( 195.588, -103.858 )
 shape = SubResource( 1 )
 [connection signal="need_restart" from="WhileDisplay/Controls" to="Bill" method="_on_Controls_need_restart"]
 [connection signal="item_taken" from="Boots" to="." method="_on_Boots_item_taken"]

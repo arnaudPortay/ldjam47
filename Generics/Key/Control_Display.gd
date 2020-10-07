@@ -5,13 +5,16 @@ signal need_restart
 
 export(bool) var showBaseControls = false
 export(bool) var showMainSceneControls = false
+export(int) var current_level = -1
 export var can_be_canceled := true
 export var show_restart := true
 onready var restartButton :Node = get_node("Buttons/Restart")
-
+onready var exitLevelButton :Node = get_node("Buttons/ExitLevel")
 func _ready() -> void:
 	if restartButton:
 		restartButton.visible = show_restart
+	if exitLevelButton:
+		exitLevelButton.visible = show_restart
 	refresh()
 		
 func _input(event):
@@ -38,3 +41,8 @@ func _on_Item_taken(item_type) -> void:
 
 func _on_Exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_ExitLevel_pressed() -> void:
+	GameStats.last_succeded_level = current_level
+	get_tree().change_scene("res://MainScene/MainScene.tscn")

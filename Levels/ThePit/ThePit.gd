@@ -15,8 +15,7 @@ func _ready():
 
 
 func _on_ConditionMetArea_body_entered(body):
-	if boots_taken:
-		get_tree().call_group("Doors", "condition_met", true)
+	get_tree().call_group("Doors", "condition_met", true)
 
 
 func _on_Boots_item_taken(item_type):

@@ -17,10 +17,11 @@ __meta__ = {
 }
 
 [node name="Restart" type="Button" parent="Buttons"]
-margin_left = 302.0
-margin_top = 794.0
-margin_right = 699.0
-margin_bottom = 909.0
+margin_left = 322.0
+margin_top = 835.0
+margin_right = 719.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 4 )
 text = "Restart Level"
 __meta__ = {
@@ -28,12 +29,25 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="Buttons"]
-margin_left = 750.0
-margin_top = 794.0
-margin_right = 1147.0
-margin_bottom = 909.0
+margin_left = 1260.0
+margin_top = 835.0
+margin_right = 1657.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 4 )
 text = "Exit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitLevel" type="Button" parent="Buttons"]
+margin_left = 788.0
+margin_top = 835.0
+margin_right = 1185.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.8, 0.8 )
+theme = ExtResource( 4 )
+text = "Exit Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -79,7 +93,6 @@ scale = Vector2( 0.8, 0.8 )
 binding_action_string = "ui_accept"
 modulate_when_activated = Color( 0.388235, 0.388235, 0.388235, 1 )
 is_action_done = true
-display_action = false
 
 [node name="Left" parent="." instance=ExtResource( 2 )]
 position = Vector2( 709, 607 )
@@ -96,3 +109,4 @@ modulate_when_activated = Color( 0.101961, 0.776471, 0.713726, 1 )
 is_action_done = true
 [connection signal="pressed" from="Buttons/Restart" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Buttons/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Buttons/ExitLevel" to="." method="_on_ExitLevel_pressed"]
