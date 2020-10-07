@@ -106,15 +106,6 @@ margin_top = 563.0
 margin_right = 526.027
 margin_bottom = 563.0
 
-[node name="LastPositionNode" type="Control" parent="CanvasLayer/mainSceneBackground/Levels"]
-margin_left = 447.5
-margin_top = 896.404
-margin_right = 447.5
-margin_bottom = 896.404
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Node" type="Node2D" parent="CanvasLayer/mainSceneBackground"]
 position = Vector2( -268.5, -115 )
 
@@ -235,6 +226,15 @@ modulate_when_activated = Color( 0.847059, 0.662745, 0.0352941, 1 )
 position = Vector2( 446, 232 )
 z_index = 5
 playing = true
+
+[node name="LastPositionNode" type="Control" parent="CanvasLayer/mainSceneBackground/Node"]
+margin_left = 447.5
+margin_top = 896.404
+margin_right = 447.5
+margin_bottom = 896.404
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Controls_no_bill" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 1003.21, 564.258 )

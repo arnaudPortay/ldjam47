@@ -12,7 +12,7 @@ var won_the_game = false
 
 onready var anim_node = $CanvasLayer/mainSceneBackground/Animations
 onready var bill = $CanvasLayer/mainSceneBackground/Node/CursorBill
-onready var last_position_node = $CanvasLayer/mainSceneBackground/Levels/LastPositionNode
+onready var last_position_node = $CanvasLayer/mainSceneBackground/Node/LastPositionNode
 onready var levels = $CanvasLayer/mainSceneBackground/Levels
 
 # Called when the node enters the scene tree for the first time.
